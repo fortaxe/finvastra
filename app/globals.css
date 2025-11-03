@@ -118,5 +118,58 @@
   }
   body {
     @apply bg-background text-foreground;
+    font-family: var(--font-geist-sans), sans-serif;
   }
+}
+
+
+
+
+.gold {
+  color: #DBB25A;
+}
+
+.gold-bg {
+  background-color: #DBB25A;
+}
+
+.border-color {
+  border-color: #0000004D
+}
+
+.bg-divider {
+  background-color: #0000004D;
+}
+
+.heading-style {
+  font-size: 100px;
+  line-height: 95px;
+  letter-spacing: -0.04em;
+  color: #fff;
+}
+
+.sub-heading-style {
+  font-size: 58px;
+  line-height: 61px;
+  letter-spacing: -0.04em;
+  font-weight: 500;
+}
+
+.text-description {
+  font-size: 16px;
+  line-height: 22px;
+  letter-spacing: 0em;
+  color: #fff;
+}
+
+
+.secondary-description {
+  font-size: 16px;
+  line-height: 22px;
+  letter-spacing: 0em;
+  color: #9E9E9E;
+}
+
+.navy-blue {
+  color: #092F52
 }
