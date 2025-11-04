@@ -28,7 +28,7 @@ const WhyChoose = () => {
     ];
 
     return (
-        <div className="w-full bg-white py-16 px-4 md:px-[60px]">
+        <div className="w-full bg-white pb-[9px] pt-[50px] border-y border-y-[#EFEFEF] px-4 md:px-[60px]">
             <div className="max-w-[1440px] mx-auto">
                 <div className="flex flex-col lg:flex-row gap-[108px]  items-center">
                     {/* Left Section - Text Content */}
@@ -40,7 +40,7 @@ const WhyChoose = () => {
                             transition={{ duration: 0.6 }}
                             className="sub-heading-style mb-5 leading-tight"
                         >
-                            <span className="text-black">Why Choose </span>
+                            <span className="navy-blue">Why Choose </span>
                             <span className="gold">
                                 Finvastra?
                             </span>
@@ -62,7 +62,7 @@ const WhyChoose = () => {
                             <motion.div
                                 key={index}
 
-                                className="flex flex-col items-center text-center px-[72px] my-[15px] border-l border-l-[#EFEFEF]"
+                                className="flex flex-col items-center text-center px-[72px] my-[15px] py-[15px] border-l border-l-[#EFEFEF]"
                             >
                                 {/* Icon */}
                                 <div className="mb-[30px] w-16 h-16 md:w-[170px] md:h-[170.01px] relative ">

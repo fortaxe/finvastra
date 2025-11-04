@@ -31,5 +31,15 @@ export const ImageButton = ({  onClick, image }: ImageButtonProps) => {
     )
 }
 
+export const NavyBlueButton = ({ name, onClick }: CustomButtonProps) => {
+    return (
+        <button 
+        onClick={onClick}
+        className="bg-navy-blue text-white px-[18px] py-[14px] rounded-[10px] text-[14px] leading-[10px] tracking-[0em]">
+           {name}
+        </button>
+    )
+}
+
 
 export default CustomButton;

@@ -41,6 +41,24 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
+  --animate-marquee: marquee var(--duration) infinite linear;
+  --animate-marquee-vertical: marquee-vertical var(--duration) linear infinite;
+  @keyframes marquee {
+  from {
+    transform: translateX(0);
+    }
+  to {
+    transform: translateX(calc(-100% - var(--gap)));
+    }
+  }
+  @keyframes marquee-vertical {
+  from {
+    transform: translateY(0);
+    }
+  to {
+    transform: translateY(calc(-100% - var(--gap)));
+    }
+  }
 }
 
 :root {
@@ -122,9 +140,6 @@
   }
 }
 
-
-
-
 .gold {
   color: #DBB25A;
 }
@@ -134,7 +149,7 @@
 }
 
 .border-color {
-  border-color: #0000004D
+  border-color: #e8e8e8;
 }
 
 .bg-divider {
@@ -162,7 +177,6 @@
   color: #fff;
 }
 
-
 .secondary-description {
   font-size: 16px;
   line-height: 22px;
@@ -170,6 +184,18 @@
   color: #9E9E9E;
 }
 
+
+.third-description {
+  font-size: 14px;
+  line-height: 10px;
+  letter-spacing: 0em;
+
+}
+
 .navy-blue {
   color: #092F52
+}
+
+.bg-navy-blue {
+  background-color: #092F52;
 }
