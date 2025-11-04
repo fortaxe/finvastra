@@ -4,6 +4,7 @@ import WhyChoose from "@/components/landing/why-choose";
 import Testimonials from "@/components/landing/testimonials";
 import GetInTouch from "@/components/ui/get-in-touch";
 import Footer from "@/components/landing/footer";
+import OurGlance from "@/components/landing/our-glance";
 
 export default function Home() {
   return (
@@ -11,6 +12,7 @@ export default function Home() {
     <Hero />
     <ClientMarquee />
     <WhyChoose />
+    <OurGlance />
     <Testimonials />
     <GetInTouch />
     <Footer />

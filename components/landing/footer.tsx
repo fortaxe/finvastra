@@ -20,7 +20,7 @@ export default function Footer() {
                 </div>
             </div>
             <p className="third-description !leading-[20px] text-[#9E9E9E] mt-5 max-w-[401px] mb-[30px]">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+            We bridge traditional lending frameworks with new-age fintech agility, enabling institutions to grow faster, safer, and smarter through strategic debt syndication and capital structuring.
             </p>
 
         <NavyBlueButton name="Partner With us" onClick={() => console.log("Contact Us")} />          
