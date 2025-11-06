@@ -61,8 +61,8 @@ const ApplicationsDropdown = () => {
             </DropdownMenuTrigger>
             <DropdownMenuContent
                 onMouseEnter={() => setIsOpen(true)}
-                className="!bg-white/30  backdrop-blur-md 
-                    rounded-[10px] py-[10px] pl-[10px] pr-[11.5px] divide-y divide-black/10 min-w-[261px] overflow-hidden"
+                className="bg-[#F3F3F3]  
+                    rounded-[10px] py-[10px] pl-[10px] pr-[11.5px] divide-y divide-black/10 min-w-[261px] overflow-hidden border-none"
                 align="start"
 
             >

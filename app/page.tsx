@@ -17,7 +17,7 @@ export default function Home() {
     <OurGlance />
     <Testimonials />
     <GetInTouch />
-    <Footer />
+    
     </div>
   );
 }

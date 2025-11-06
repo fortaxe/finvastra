@@ -37,8 +37,8 @@ const WhyChoose = () => {
     const secondRow = features.slice(2, 4);
 
     return (
-        <div className="w-full bg-white pb-[9px] pt-[50px] max-w-[1440px] mx-auto   md:px-[60px]">
-            <div className="border-y border-y-[#EFEFEF]">
+        <div className="w-full bg-white  max-w-[1440px] mx-auto  md:px-[60px]">
+            <div className="border-y border-y-[#EFEFEF] py-[50px]">
                 <div className="flex flex-col lg:flex-row gap-[108px]  items-center">
                     {/* Left Section - Text Content */}
                     <div className="flex-1 lg:max-w-[500px]">

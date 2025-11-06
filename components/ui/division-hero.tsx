@@ -33,9 +33,9 @@ const DivisionHero = ({ title, description, tags }: DivisionHeroProps) => {
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8 }}
-                        className="text-center  mx-auto max-w-[829px]"
+                        className="text-center  mx-auto max-w-[899px]"
                     >
-                        <h1 className="heading-style  max-w-[971px] mx-auto">
+                        <h1 className="heading-style  ] mx-auto">
                             {title}
 
 
