@@ -29,7 +29,7 @@ const dropdownItems: ServiceDropdownProps[] = [
     },
     {
         img: "/icons/arrow.svg",
-        name: "FINVASTRA ADVISORS PVT. LTD.",
+        name: "FINVASTRA ADVISORS Pvt Ltd",
         link: "finvastra-advisors",
     },
 ];
