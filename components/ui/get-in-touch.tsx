@@ -29,7 +29,7 @@ export default function GetInTouch() {
 
   return (
     <section className="relative bg-white py-[70px]">
-      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-[70px] w-full">
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-[60px] w-full">
         <div className="flex flex-row gap-[63px] items-start">
           {/* Left Side - Heading */}
           <motion.div

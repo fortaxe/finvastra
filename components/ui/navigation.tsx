@@ -60,12 +60,12 @@ const Navigation = () => {
         <div className="hidden md:block relative z-[60]">
           <motion.div
             className="shrink-0"
-            style={{ 
+            style={{
               marginTop: 'calc((50px + 9px + 13px) - 60px - 16.5px)' // navbar center - parent padding - half logo height
             }}
           >
             <Image
-              src="/icons/logo.svg"
+              src="/logo.svg"
               alt="Equitas IT INC Logo"
               width={38.18}
               height={35}
@@ -93,7 +93,7 @@ const Navigation = () => {
               <div className="flex items-center gap-[15px]  relative z-10">
 
                 <Link href="/#" className="text-black transition-colors duration-200 text-[14px] leading-[10px] flex items-center">
-                <Image src="/icons/home.svg" alt="Home" width={16} height={16} className="w-[16px] h-[16px]" />
+                  <Image src="/icons/home.svg" alt="Home" width={16} height={16} className="w-[16px] h-[16px]" />
 
                 </Link>
 
@@ -116,14 +116,14 @@ const Navigation = () => {
                 <div className="w-[0.5px] h-[26px] bg-divider"></div>
 
                 <Link href="/careers" className="text-black transition-colors duration-200 text-[14px] leading-[10px] flex items-center gap-[3px]">
-                <Image src="/icons/partner.svg" alt="Partner With Us" width={16} height={16} className="w-[16px] h-[16px]" />
+                  <Image src="/icons/partner.svg" alt="Partner With Us" width={16} height={16} className="w-[16px] h-[16px]" />
                   Partner With Us
                 </Link>
 
                 <div className="w-[0.5px] h-[26px] bg-divider"></div>
 
                 <Link href="/careers" className="text-black transition-colors duration-200 text-[14px] leading-[10px] flex items-center gap-[3px]">
-                <Image src="/icons/phone.svg" alt="Contact" width={16} height={16} className="w-[16px] h-[16px]" />
+                  <Image src="/icons/phone.svg" alt="Contact" width={16} height={16} className="w-[16px] h-[16px]" />
                   Contact
                 </Link>
 

@@ -14,7 +14,7 @@ const OurGlance = () => {
                 transition={{ duration: 0.6 }}
                 className="sub-heading-style mb-[50px] leading-tight text-center"
             >
-                <span className="navy-blue">Our Impact at a Glance </span>
+                <span className="navy-blue">Our Impact at a </span>
                 <span className="gold">
                     Glance
                 </span>

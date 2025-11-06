@@ -51,15 +51,15 @@ const Testimonials = () => {
         <div className="w-full relative h-[847px] overflow-hidden">
             {/* Background Image with Blur */}
             <div className="absolute inset-0 z-0">
-                <Image
+                {/* <Image
                     src="/testomonials.jpg" // Placeholder - user will add actual image
                     alt="Background"
                     fill
                     className="object-cover"
                   
-                />
+                /> */}
                 {/* Dark overlay for better text readability */}
-                <div className="absolute inset-0 bg-black/40" />
+                <div className="absolute inset-0 bg-[#092F52]" />
             </div>
 
             {/* Content */}
@@ -72,10 +72,10 @@ const Testimonials = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.6 }}
-                            className="sub-heading-style text-white "
+                            className="sub-heading-style text-white font-medium"
                         >
                             <span className="block">Hear it from</span>
-                            <span className="block font-semibold">Our Clients</span>
+                            <span className="block ">Our Clients</span>
                         </motion.h2>
                     </div>
 
