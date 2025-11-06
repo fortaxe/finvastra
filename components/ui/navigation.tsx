@@ -5,7 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState, useRef } from "react";
 
-import CustomButton from "./custom-button";
+
 import { useRouter } from "next/navigation";
 import ApplicationsDropdown from "./service-dropdown";
 
@@ -50,11 +50,7 @@ const Navigation = () => {
               />
             </Link>
           </motion.div>
-
-
         </div>
-
-
 
         {/* Logo - Left side (not sticky) - Centered vertically with navbar */}
         <div className="hidden md:block relative z-[60]">
@@ -85,10 +81,7 @@ const Navigation = () => {
 
             <div
               className="relative backdrop-blur-md px-[15px] py-[9px] flex items-center justify-center rounded-[10px] overflow-visible border border-white/30 bg-[#F3F3F3]"
-
             >
-
-
               {/* Desktop Navigation - Right aligned */}
               <div className="flex items-center gap-[15px]  relative z-10">
 

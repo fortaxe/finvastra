@@ -19,43 +19,18 @@ interface ServiceDropdownProps {
 const dropdownItems: ServiceDropdownProps[] = [
     {
         img: "/icons/arrow.svg",
-        name: "Software Development",
-        link: "software-development",
+        name: "FINVASTRA WEALTH Pvt Ltd",
+        link: "finvastra-wealth",
     },
     {
         img: "/icons/arrow.svg",
-        name: "Software Consulting",
-        link: "software-consulting",
+        name: "FINVASTRA INSURANCE MARKETING Pvt Ltd",
+        link: "finvastra-insurance-marketing",
     },
     {
         img: "/icons/arrow.svg",
-        name: "Application Development",
-        link: "application-development",
-    },
-    {
-        img: "/icons/arrow.svg",
-        name: "Web Development",
-        link: "web-development",
-    },
-    {
-        img: "/icons/arrow.svg",
-        name: "Mobile App Development",
-        link: "mobile-app-development",
-    },
-    {
-        img: "/icons/arrow.svg",
-        name: "API Development",
-        link: "api-development",
-    },
-    {
-        img: "/icons/arrow.svg",
-        name: "IT Staff Augmentation Services",
-        link: "it-staff-augmentation-services",
-    },
-    {
-        img: "/icons/arrow.svg",
-        name: "Nearshore Staff Augmentation",
-        link: "nearshore-staff-augmentation",
+        name: "FINVASTRA ADVISORS PVT. LTD.",
+        link: "finvastra-advisors",
     },
 ];
 
@@ -81,13 +56,13 @@ const ApplicationsDropdown = () => {
 
             >
 
-                Services
-                <div className="w-[5px] h-[5px] gold-bg rounded-full" />
+                Divisions
+                <div className="w-[5px] h-[5px] bg-[#DBB25A] rounded-full" />
             </DropdownMenuTrigger>
             <DropdownMenuContent
                 onMouseEnter={() => setIsOpen(true)}
-                className="!bg-white/5  backdrop-blur-md 
-                 rounded-[10px] border border-white/10   py-[10px] pl-[10px] pr-[11.5px] divide-y min-w-[261px]"
+                className="!bg-white/30  backdrop-blur-md 
+                    rounded-[10px] py-[10px] pl-[10px] pr-[11.5px] divide-y divide-black/10 min-w-[261px] overflow-hidden"
                 align="start"
 
             >
@@ -95,13 +70,13 @@ const ApplicationsDropdown = () => {
                     <DropdownMenuItem
                         onClick={() => handleNavigation(item.link)}
                         key={item.name}
-                        className="flex items-center justify-between py-[10px] text-[14px] leading-[10px] cursor-pointer text-white "
+                        className="flex items-center justify-between py-[10px] text-[14px] leading-[10px] cursor-pointer text-black rounded-[0px] "
                     >
 
-                        <span className="!text-[14px] !leading-[10px] tracking-[0em]  text-white">
+                        <span className="!text-[14px] !leading-[10px] tracking-[0em]  text-black">
                             {item.name}
                         </span>
-                        <div className="w-[5px] h-[5px] bg-white rounded-full" />
+                     
                     </DropdownMenuItem>
                 ))}
             </DropdownMenuContent>
