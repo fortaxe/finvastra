@@ -96,7 +96,7 @@ const Testimonials = () => {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: false, margin: "-50px" }}
                                 transition={{ duration: 0.6, delay: 0.1 }}
-                                className="bg-white/10  rounded-[10px] p-5 "
+                                className="bg-white/10  rounded-[25px] pt-[25px] pb-[20px] px-[20px] "
                             >
                                 <h3 className="text-[16px] leading-[12px] text-white mb-2">
                                     {testimonial.name}
