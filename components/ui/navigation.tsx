@@ -77,47 +77,27 @@ const Navigation = () => {
           transition={{ duration: 0.5 }}
           className="fixed top-[50px] left-0 w-full   z-50 hidden md:block  "
         >
-          <div className="max-w-[1440px] mx-auto px-4 md:px-[70px] flex justify-center  ">
+          <div className="max-w-[1440px] mx-auto px-4 md:px-[70px] flex justify-center">
 
             <div
-              className="relative backdrop-blur-md px-[15px] py-[9px] flex items-center justify-center rounded-[10px] overflow-visible border border-white/30 bg-[#F3F3F3]"
+              className="relative backdrop-blur-md p-2 flex items-center justify-center rounded-full overflow-visible  bg-[#011527]"
             >
               {/* Desktop Navigation - Right aligned */}
-              <div className="flex items-center gap-[15px]  relative z-10">
-
-                <Link href="/#" className="text-black transition-colors duration-200 text-[14px] leading-[10px] flex items-center">
-                  <Image src="/icons/home.svg" alt="Home" width={16} height={16} className="w-[16px] h-[16px]" />
-
-                </Link>
-
-                <div className="w-[0.5px] h-[26px] bg-divider"></div>
-
+              <div className="flex items-center gap-2 relative z-10">
                 <div className="relative" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-
                   <ApplicationsDropdown />
-
-
                 </div>
 
-                <div className="w-[0.5px] h-[26px] bg-divider"></div>
-
-                <Link href="/company" className="text-black transition-colors duration-200 text-[14px] leading-[10px] flex items-center">
-                  About
-
+                <Link href="/company" className="text-white transition-colors duration-200 text-[14px] leading-[10px] flex items-center bg-[#041D36] border border-[#092F52] px-[16px] py-[14px] rounded-full">
+                  Company
                 </Link>
 
-                <div className="w-[0.5px] h-[26px] bg-divider"></div>
-
-                <Link href="/careers" className="text-black transition-colors duration-200 text-[14px] leading-[10px] flex items-center gap-[3px]">
-                  <Image src="/icons/partner.svg" alt="Partner With Us" width={16} height={16} className="w-[16px] h-[16px]" />
+                <Link href="/company" className="text-white transition-colors duration-200 text-[14px] leading-[10px] flex items-center bg-[#041D36] border border-[#092F52] px-[16px] py-[14px] rounded-full">
                   Partner With Us
                 </Link>
 
-                <div className="w-[0.5px] h-[26px] bg-divider"></div>
-
-                <Link href="/careers" className="text-black transition-colors duration-200 text-[14px] leading-[10px] flex items-center gap-[3px]">
-                  <Image src="/icons/phone.svg" alt="Contact" width={16} height={16} className="w-[16px] h-[16px]" />
-                  Contact
+                <Link href="/company" className="text-white transition-colors duration-200 text-[14px] leading-[10px] flex items-center bg-[#041D36] border border-[#092F52] px-[16px] py-[14px] rounded-full">
+                  Support
                 </Link>
 
               </div>

@@ -51,13 +51,13 @@ const ApplicationsDropdown = () => {
             modal={false}
             open={isOpen} onOpenChange={setIsOpen}>
             <DropdownMenuTrigger
-                className="text-black transition-colors duration-200 text-[14px] leading-[10px] flex items-center gap-[5px] outline-none focus-visible:ring-0 focus-visible:outline-none focus:ring-0"
+                className="text-white transition-colors duration-200 text-[14px] leading-[10px] flex items-center gap-[5px] bg-[#041D36] border border-[#092F52] px-[16px] py-[14px] rounded-full outline-none focus-visible:ring-0 focus-visible:outline-none focus:ring-0"
                 onMouseEnter={() => setIsOpen(true)}
 
             >
 
                 Divisions
-                <div className="w-[5px] h-[5px] bg-[#DBB25A] rounded-full" />
+               
             </DropdownMenuTrigger>
             <DropdownMenuContent
                 onMouseEnter={() => setIsOpen(true)}

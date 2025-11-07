@@ -1,6 +1,6 @@
 "use client";
 
-import ColorBends from "../ColorBends";
+
 import { motion } from "motion/react";
 import Navigation from "../ui/navigation";
 import CustomButton, { ImageButton } from "../ui/custom-button";
@@ -49,7 +49,7 @@ const Hero = () => {
                         <div className="flex justify-center gap-[10px]">
                             <CustomButton name="Explore Solutions" onClick={() => { }} />
                             <CustomButton name="Partner With Us" onClick={() => { }} />
-                            <ImageButton image="/icons/arrow.svg" onClick={() => { }} />
+                          
                         </div>
 
                     </motion.div>

@@ -15,7 +15,7 @@ const CustomButton = ({ name, onClick }: CustomButtonProps) => {
     return (
         <button 
         onClick={onClick}
-        className="bg-white text-black px-[18px] py-[14px] rounded-[10px] text-[14px] leading-[10px] tracking-[0em]">
+        className="text-white transition-colors duration-200 text-[14px] leading-[10px] flex items-center bg-[#041D36] border border-[#092F52] px-[16px] py-[14px] rounded-full">
            {name}
         </button>
     )
