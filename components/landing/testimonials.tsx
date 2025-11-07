@@ -51,15 +51,15 @@ const Testimonials = () => {
         <div className="w-full relative h-[847px] overflow-hidden">
             {/* Background Image with Blur */}
             <div className="absolute inset-0 z-0">
-                {/* <Image
-                    src="/testomonials.jpg" // Placeholder - user will add actual image
+                <Image
+                    src="/review.jpg" // Placeholder - user will add actual image
                     alt="Background"
                     fill
                     className="object-cover"
                   
-                /> */}
+                />
                 {/* Dark overlay for better text readability */}
-                <div className="absolute inset-0 bg-[#092F52]" />
+                <div className="absolute inset-0 bg-black/40" />
             </div>
 
             {/* Content */}

@@ -3,35 +3,17 @@
 import Image from "next/image";
 import { motion } from "motion/react";
 
-interface Feature {
+export interface WhyChooseFeature {
     icon: string;
     title: string;
-    description: string;
 }
 
-const WhyChoose = () => {
-    const features: Feature[] = [
-        {
-            icon: "/features/1.svg", // Placeholder - user will add actual path
-            title: "Expertise in Debt Syndication",
-            description: ""
-        },
-        {
-            icon: "/features/2.svg", // Placeholder - user will add actual path
-            title: "Strategic NBFC & Fintech Partnerships",
-            description: ""
-        },
-        {
-            icon: "/features/3.svg", // Placeholder - user will add actual path
-            title: "Capital Structuring & Compliance Support",
-            description: ""
-        },
-        {
-            icon: "/features/4.svg", // Placeholder - user will add actual path
-            title: "Technology-led Distribution Approach",
-            description: ""
-        }
-    ];
+interface WhyChooseProps {
+    description: string;
+    features: WhyChooseFeature[];
+}
+
+const WhyChoose = ({ description, features }: WhyChooseProps) => {
 
     const firstRow = features.slice(0, 2);
     const secondRow = features.slice(2, 4);
@@ -61,14 +43,14 @@ const WhyChoose = () => {
                             transition={{ duration: 0.6, delay: 0.1 }}
                             className="secondary-description"
                         >
-                            At Finvastra, financial growth is not just about capital - it&apos;s about collaboration, clarity, and compliance. We bridge traditional lending frameworks with new-age fintech agility, enabling institutions to grow faster, safer, and smarter.
+                            {description}
                         </motion.p>
                     </div>
 
 
                     {/* Right Section - Feature Grid */}
                     <div className="flex-1 grid grid-cols-1 sm:grid-cols-2 ">
-                        {firstRow.map((feature: Feature, index: number) => (
+                        {firstRow.map((feature: WhyChooseFeature, index: number) => (
                             <motion.div
                                 key={index}
 
@@ -94,7 +76,7 @@ const WhyChoose = () => {
                          {/* Divider */}
   <div className="col-span-2 my-[15px] border-t border-[#EFEFEF]"></div>
 
-                        {secondRow.map((feature: Feature, index: number) => (
+                        {secondRow.map((feature: WhyChooseFeature, index: number) => (
                             <motion.div
                                 key={index}
 

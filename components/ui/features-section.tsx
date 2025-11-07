@@ -43,7 +43,7 @@ const FeaturesSection = ({ features }: FeaturesSectionProps) => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, ease: "easeOut" }}
-            className="bg-white rounded-[25px] p-[20px] border border-color  flex flex-col items-start"
+            className="bg-[#FAFAFA] rounded-[25px] p-[20px] border border-color  flex flex-col items-start"
           >
             {/* Icon */}
             <div className=" p-[10px] border border-color rounded-[8px]">

@@ -40,15 +40,14 @@ const Navigation = () => {
             whileHover={{ scale: 1.05 }}
             className="shrink-0"
           >
-            <Link href="/" className="flex items-center">
-              <Image
-                src="/white-logo.svg"
-                alt="Equitas IT INC Logo"
-                width={51.9}
-                height={44}
-                className="w-[full] h-[full]"
-              />
-            </Link>
+            <Image
+              src="/white-logo.svg"
+              alt="Equitas IT INC Logo"
+              width={51.9}
+              height={44}
+              className="w-[full] h-[full] cursor-pointer"
+              onClick={() => router.push("/")}
+            />
           </motion.div>
         </div>
 
@@ -65,7 +64,8 @@ const Navigation = () => {
               alt="Equitas IT INC Logo"
               width={35}
               height={35}
-              className="w-[38.18px] h-[35px]"
+              className="w-[38.18px] h-[35px] cursor-pointer"
+              onClick={() => router.push("/")}
             />
           </motion.div>
         </div>
@@ -128,15 +128,17 @@ const Navigation = () => {
           >
             {/* Header */}
             <div className="flex items-center justify-between w-full">
-              <Link href="/" className="flex items-center">
-                <Image
-                  src="/white-logo.svg"
-                  alt="Equitas IT INC Logo"
-                  width={142}
-                  height={37.82}
-                  className="w-[142px] h-[37.82px]"
-                />
-              </Link>
+              <Image
+                src="/white-logo.svg"
+                alt="Equitas IT INC Logo"
+                width={142}
+                height={37.82}
+                className="w-[142px] h-[37.82px] cursor-pointer"
+                onClick={() => {
+                  router.push("/");
+                  setIsMobileOpen(false);
+                }}
+              />
               <button
                 type="button"
                 aria-controls="mobile-menu"

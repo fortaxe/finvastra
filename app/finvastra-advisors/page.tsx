@@ -3,6 +3,7 @@ import AdvisorsFeatures from "./features";
 import WhyChoose from "@/components/landing/why-choose";
 import ContentSection from "@/components/ui/content-section";
 import { advisorsContent } from "./advisors-content-data";
+import { advisorsWhyChoose } from "./advisors-why-choose-data";
 
 export default function AdvisorsPage() {
     return (
@@ -16,7 +17,10 @@ export default function AdvisorsPage() {
             />
             <AdvisorsFeatures />
             <div className="mb-[70px]">
-            <WhyChoose />
+                <WhyChoose 
+                    description={advisorsWhyChoose.description}
+                    features={advisorsWhyChoose.features}
+                />
             </div>
         </div>
     )
