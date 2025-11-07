@@ -19,18 +19,18 @@ interface ServiceDropdownProps {
 const dropdownItems: ServiceDropdownProps[] = [
     {
         img: "/icons/arrow.svg",
-        name: "FINVASTRA WEALTH Pvt Ltd",
+        name: "Finvastra Advisors Pvt. Ltd.",
+        link: "finvastra-advisors",
+    },
+    {
+        img: "/icons/arrow.svg",
+        name: "Finvastra Wealth Pvt. Ltd.",
         link: "finvastra-wealth",
     },
     {
         img: "/icons/arrow.svg",
-        name: "FINVASTRA INSURANCE MARKETING Pvt Ltd",
+        name: "Finvastra Insurance Marketing Pvt. Ltd.",
         link: "finvastra-insurance-marketing",
-    },
-    {
-        img: "/icons/arrow.svg",
-        name: "FINVASTRA ADVISORS Pvt Ltd",
-        link: "finvastra-advisors",
     },
 ];
 
@@ -61,8 +61,8 @@ Verticals
             </DropdownMenuTrigger>
             <DropdownMenuContent
                 onMouseEnter={() => setIsOpen(true)}
-                className="bg-[#F3F3F3]  
-                    rounded-[10px] py-[10px] pl-[10px] pr-[11.5px] divide-y divide-black/10 min-w-[261px] overflow-hidden border-none"
+                className="bg-[#041D36]  
+                    rounded-[25px] px-4 divide-y divide-[#092F52] min-w-[261px] overflow-hidden border border-[#092F52] py-[5px]"
                 align="start"
 
             >
@@ -70,10 +70,10 @@ Verticals
                     <DropdownMenuItem
                         onClick={() => handleNavigation(item.link)}
                         key={item.name}
-                        className="flex items-center justify-between py-[10px] text-[14px] leading-[10px] cursor-pointer text-black rounded-[0px] "
+                        className="flex items-center justify-between py-[11px] text-[14px] leading-[10px] cursor-pointer text-white rounded-[0px] "
                     >
 
-                        <span className="!text-[14px] !leading-[10px] tracking-[0em]  text-black">
+                        <span className="!text-[14px] !leading-[10px] tracking-[0em]  text-white">
                             {item.name}
                         </span>
                      

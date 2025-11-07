@@ -4,7 +4,6 @@
 import { motion } from "motion/react";
 import Navigation from "@/components/ui/navigation";
 import TagButton from "./tag-button";
-import Plasma from "@/components/Plasma";
 
 interface DivisionHeroProps {
     title: string;
@@ -15,18 +14,20 @@ interface DivisionHeroProps {
 const DivisionHero = ({ title, description, tags }: DivisionHeroProps) => {
     return (
 
-        <div className="min-h-screen w-full bg-black relative">
-            {/* Silk Background */}
-            <div className="absolute inset-0 z-0">
-            <Plasma
-                    color="#DBB25A"
-                    speed={0.6}
-                    direction="forward"
-                    scale={1.1}
-                    opacity={0.8}
-                    mouseInteractive={true}
-                />
-            </div>
+        <div className="min-h-screen w-full bg-[#020617] relative">
+            {/* Dark Sphere Grid Background */}
+            <div
+                className="absolute inset-0 z-0"
+                style={{
+                    background: "#020617",
+                    backgroundImage: `
+                        linear-gradient(to right, rgba(71,85,105,0.3) 1px, transparent 1px),
+                        linear-gradient(to bottom, rgba(71,85,105,0.3) 1px, transparent 1px),
+                        radial-gradient(circle at 50% 50%, rgba(139,92,246,0.15) 0%, transparent 70%)
+                    `,
+                    backgroundSize: "32px 32px, 32px 32px, 100% 100%",
+                }}
+            />
 
 
             <div className="absolute top-0 left-0 right-0 z-50">
