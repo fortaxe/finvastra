@@ -14,7 +14,7 @@ export default function Home() {
       <Hero />
       <EmpoweringGrowth />
       <ClientMarquee />
-      <WhyChoose 
+      <WhyChoose
         description={landingWhyChoose.description}
         features={landingWhyChoose.features}
       />

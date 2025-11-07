@@ -36,7 +36,7 @@ const ContentSection = ({ title, highlightedWord, description, buttons }: Conten
           </p>
 
           {/* Buttons */}
-          <div className="flex flex-wrap gap-[10px]">
+          <div className="flex flex-wrap gap-[5px]">
             {buttons.map((button, index) => (
               <NavyBlueButton
                 key={index}

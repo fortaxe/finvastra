@@ -7,8 +7,8 @@ const footerIcons =["icons/footer/1.svg", "icons/footer/2.svg", "icons/footer/3.
 
 export default function Footer() {
   return (
-    <div className="">
-      <footer className="bg-[#FAFAFA] text-[#B0C4DE] px-[60px] pt-[60px]  max-w-[1440px] mx-auto ">
+    <div className="bg-[#FAFAFA]">
+      <footer className=" text-[#B0C4DE] px-[60px] pt-[60px]  max-w-[1440px] mx-auto ">
         {/* Top Section */}
         <div className="border-b border-white/20 flex flex-col lg:flex-row justify-between gap-[332px]">
           {/* Left Section - Company Description & Social Media */}

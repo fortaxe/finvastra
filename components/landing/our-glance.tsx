@@ -25,9 +25,6 @@ const OurGlance = () => {
                 <SecondCard />
                 <ThirdCard />
             </div>
-
-
-
         </div>
     )
 }

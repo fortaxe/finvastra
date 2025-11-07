@@ -11,11 +11,11 @@ const CompanyPage = () => {
             <CompanyHero />
             <MeetOurTeam teamMembers={teamMembers} />
             <MissionVission />
-            <AboutFinvastra
-            backgroundImage="/partner.jpg"
+            <AboutFinvastra      
+                backgroundImage="/partner.jpg"
             />
             <FeatureSection />
-        </div> 
+        </div>
     )
 }
 
