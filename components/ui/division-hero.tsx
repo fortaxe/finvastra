@@ -9,9 +9,10 @@ interface DivisionHeroProps {
     title: string;
     description?: string;
     tags?: string[];
+    maxWidth?: string;
 }
 
-const DivisionHero = ({ title, description, tags }: DivisionHeroProps) => {
+const DivisionHero = ({ title, description, tags, maxWidth = "899px" }: DivisionHeroProps) => {
     return (
 
         <div className="min-h-screen w-full bg-[#020617] relative">
@@ -40,7 +41,8 @@ const DivisionHero = ({ title, description, tags }: DivisionHeroProps) => {
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8 }}
-                        className="text-center  mx-auto max-w-[899px]"
+                        className="text-center  mx-auto"
+                        style={{ maxWidth }}
                     >
                         <h1 className="heading-style  ] mx-auto">
                             {title}
