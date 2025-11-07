@@ -56,7 +56,7 @@ const ApplicationsDropdown = () => {
 
             >
 
-                Divisions
+Verticals
                
             </DropdownMenuTrigger>
             <DropdownMenuContent

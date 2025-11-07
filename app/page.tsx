@@ -10,14 +10,13 @@ import EmpoweringGrowth from "@/components/landing/empowering-growth";
 export default function Home() {
   return (
     <div>
-    <Hero />
-    <EmpoweringGrowth />
-    <ClientMarquee />
-    <WhyChoose />
-    <OurGlance />
-    <Testimonials />
-    <GetInTouch />
-    
+      <Hero />
+      <EmpoweringGrowth />
+      <ClientMarquee />
+      <WhyChoose />
+      <OurGlance />
+      <Testimonials />
+      <GetInTouch />
     </div>
   );
 }

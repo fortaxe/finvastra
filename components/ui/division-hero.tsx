@@ -1,14 +1,15 @@
 "use client";
 
-import ColorBends from "@/components/ColorBends";
+
 import { motion } from "motion/react";
 import Navigation from "@/components/ui/navigation";
 import TagButton from "./tag-button";
+import Plasma from "@/components/Plasma";
 
 interface DivisionHeroProps {
     title: string;
-    description: string;
-    tags: string[];
+    description?: string;
+    tags?: string[];
 }
 
 const DivisionHero = ({ title, description, tags }: DivisionHeroProps) => {
@@ -17,8 +18,13 @@ const DivisionHero = ({ title, description, tags }: DivisionHeroProps) => {
         <div className="min-h-screen w-full bg-black relative">
             {/* Silk Background */}
             <div className="absolute inset-0 z-0">
-                <ColorBends
-                    colors={["#092F52"]}
+            <Plasma
+                    color="#DBB25A"
+                    speed={0.6}
+                    direction="forward"
+                    scale={1.1}
+                    opacity={0.8}
+                    mouseInteractive={true}
                 />
             </div>
 
@@ -41,16 +47,16 @@ const DivisionHero = ({ title, description, tags }: DivisionHeroProps) => {
 
                     
                         </h1>
-                        <p className="text-description  mx-auto py-[30px]">
+                        {/* <p className="text-description  mx-auto py-[30px]">
                             {description}
-                        </p>
+                        </p> */}
 
                         {/* Industry Tags */}
-                        <div className="flex justify-center gap-[10px]">
+                        {/* <div className="flex justify-center gap-[10px]">
                             {tags.map((tag) => (
                                 <TagButton name={tag} onClick={() => { }} />
                             ))}
-                        </div>
+                        </div> */}
 
                     </motion.div>
                 </div>

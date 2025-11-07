@@ -11,13 +11,9 @@ interface ContentSectionProps {
 }
 
 const ContentSection = ({ title, highlightedWord, description, buttons }: ContentSectionProps) => {
-  const titleParts = title.split(" ");
-  const lastWord = titleParts[titleParts.length - 1];
-  const titleWithoutLast = titleParts.slice(0, -1).join(" ");
-
   return (
-    <section className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-[60px] py-[70px]">
-      <div className="max-w-[829px]">
+    <section className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-[60px] pt-[70px] ">
+      <div className="">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -27,14 +23,15 @@ const ContentSection = ({ title, highlightedWord, description, buttons }: Conten
         >
           {/* Title */}
           <div>
-            <h1 className="heading-style">
-              {titleWithoutLast}{" "}
+            <h1 className="sub-heading-style text-left">
+              {title}
+              <br />
               <span className="text-[#DBB25A]">{highlightedWord}</span>
             </h1>
           </div>
 
           {/* Description */}
-          <p className="text-description text-left">
+          <p className="secondary-description text-left">
             {description}
           </p>
 

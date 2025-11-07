@@ -7,9 +7,7 @@ export interface FeatureItem {
   id: string;
   title: string;
   description: string;
-  image: string;
-  imageAlt: string;
-  layout: "image-left" | "image-right";
+  icon: string;
 }
 
 interface FeaturesSectionProps {
@@ -36,59 +34,44 @@ const highlightTitle = (title: string): string => {
 
 const FeaturesSection = ({ features }: FeaturesSectionProps) => {
   return (
-    <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-[60px] flex flex-col py-[70px] gap-x-[60px]">
-      {features.map((feature) => {
-        const isImageLeft = feature.layout === "image-left";
-        
-        return (
-          <div
+    <section className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-[60px] py-[70px]">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[20px]">
+        {features.map((feature) => (
+          <motion.div
             key={feature.id}
-            className="flex flex-row gap-[60px] items-center justify-start"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            className="bg-white rounded-[25px] p-[20px] border border-color  flex flex-col items-start"
           >
-            {/* Image Section */}
-            <div className={isImageLeft ? "order-2 lg:order-1" : "order-2 lg:order-2"}>
+            {/* Icon */}
+            <div className=" p-[10px] border border-color rounded-[8px]">
               <Image
-                src={feature.image}
-                alt={feature.imageAlt}
-                width={649}
-                height={550}
-                className="w-[649px] h-[550px] object-cover rounded-[10px] border border-white/10"
+                src={feature.icon}
+                alt={feature.title}
+                  width={24}
+                height={24}
+                className="w-[24px] h-[24px]"
               />
             </div>
 
-            {/* Content Section */}
-            <div className={isImageLeft ? "order-1 lg:order-2 max-w-[610px]" : "order-1 lg:order-1 max-w-[610px]"}>
-              <motion.div
-                initial={{ opacity: 0, x: isImageLeft ? 50 : -50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, ease: "easeOut" }}
-                className="space-y-[10px]"
-              >
-                {/* Title */}
-                <div>
-                  <p className="third-description text-[#9E9E9E]">
-                    /{feature.id}
-                  </p>
-                  <h1
-                    className="sub-heading-style navy-blue mt-2"
-                    dangerouslySetInnerHTML={{
-                      __html: highlightTitle(feature.title)
-                    }}
-                  >
-                  </h1>
-                </div>
+            {/* Title */}
+            <h1
+              className="text-description !text-black mt-5"
+             
+            >
+              {feature.title}
+            </h1>
 
-                {/* Description */}
-                <p className="secondary-description mt-5">
-                  {feature.description}
-                </p>
-              </motion.div>
-            </div>
-          </div>
-        );
-      })}
-    </div>
+            {/* Description */}
+            <p className="secondary-description text-[#9E9E9E] mt-[10px]">
+              {feature.description}
+            </p>
+          </motion.div>
+        ))}
+      </div>
+    </section>
   );
 };
 
