@@ -5,19 +5,19 @@ export const landingWhyChoose = {
   features: [
     {
       icon: "/features/1.svg",
-      title: "Expertise in Debt Syndication",
+      title: "Expertise in Debt\nSyndication",
     },
     {
       icon: "/features/2.svg",
-      title: "Strategic NBFC & Fintech Partnerships",
+      title: "Strategic NBFC & Fintech\nPartnerships",
     },
     {
       icon: "/features/3.svg",
-      title: "Capital Structuring & Compliance Support",
+      title: "Capital Structuring &\nCompliance Support",
     },
     {
       icon: "/features/4.svg",
-      title: "Technology-led Distribution Approach",
+      title: "Technology-led\nDistribution Approach",
     },
   ] as WhyChooseFeature[],
 };

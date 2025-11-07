@@ -67,14 +67,19 @@ const WhyChoose = ({ description, features }: WhyChooseProps) => {
                                     />
                                 </div>
                                 {/* Text */}
-                                <p className="text-description !text-black max-w-[194px] mx-auto">
-                                    {feature.title}
+                                <p className="text-description !text-black mx-auto">
+                                    {feature.title.split('\n').map((line, i, arr) => (
+                                        <span key={i}>
+                                            {line}
+                                            {i < arr.length - 1 && <br />}
+                                        </span>
+                                    ))}
                                 </p>
                             </motion.div>
                         ))}
 
-                         {/* Divider */}
-  <div className="col-span-2 my-[15px] border-t border-[#EFEFEF]"></div>
+                        {/* Divider */}
+                        <div className="col-span-2 my-[15px] border-t border-[#EFEFEF]"></div>
 
                         {secondRow.map((feature: WhyChooseFeature, index: number) => (
                             <motion.div
@@ -93,8 +98,13 @@ const WhyChoose = ({ description, features }: WhyChooseProps) => {
                                     />
                                 </div>
                                 {/* Text */}
-                                <p className="text-description !text-black max-w-[194px] mx-auto">
-                                    {feature.title}
+                                <p className="text-description !text-black mx-auto">
+                                    {feature.title.split('\n').map((line, i, arr) => (
+                                        <span key={i}>
+                                            {line}
+                                            {i < arr.length - 1 && <br />}
+                                        </span>
+                                    ))}
                                 </p>
                             </motion.div>
                         ))}

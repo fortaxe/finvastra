@@ -5,19 +5,19 @@ export const wealthWhyChoose = {
   features: [
     {
       icon: "/features/1.svg",
-      title: "Multi-asset, unbiased advisory approach",
+      title: "Multi-asset, unbiased\nadvisory approach",
     },
     {
       icon: "/features/2.svg",
-      title: "Strong research & due diligence on every product",
+      title: "Strong research & due\ndiligence on every product",
     },
     {
       icon: "/features/3.svg",
-      title: "Transparent reporting and personalized engagement",
+      title: "Transparent reporting and\npersonalized engagement",
     },
     {
       icon: "/features/4.svg",
-      title: "Seamless integration with Finvastra Advisors & Insurance",
+      title: "Seamless integration with\nFinvastra Advisors & Insurance",
     },
   ] as WhyChooseFeature[],
 };
