@@ -36,9 +36,8 @@ export const aiFeatures: AiFeature[] = [
   
 const TiltCard = () => {
     return (
-    
             <div className="
-            w-[390px] h-[390px]
+            w-[350px] h-[345px]
             border border-[#E8E8E8] relative rounded-[20px] p-[30px] bg-white">
                 <motion.div 
                 initial={{ rotate: 7.1 }}
@@ -49,20 +48,20 @@ const TiltCard = () => {
                   stiffness: 100,
                   damping: 5,
                 }}
-                className="absolute inset-0 flex flex-col items- justify-center rounded-[20px] p-[30px] border border-[#E8E8E8] bg-white gap-[35px]" >
+                className="absolute inset-0 flex flex-col items- justify-center rounded-[20px] p-[30px] border border-[#E8E8E8] bg-white gap-[34px]" >
                   {aiFeatures.map((feature, index) => (
                       <div 
                     
                       key={index}
-                      className="flex flex-row items-start gap-3">
+                      className="flex flex-row items-start gap-[14px]">
                         <div>
                       <Image src={feature.image} alt={feature.title} width={24} height={24} />
                       </div>
                       <div>
-                      <h2 className="text-[20px] leading-[15px] tracking-[0em] navy-blue mb-[14px] font-medium">
+                      <h2 className="text-[20px] leading-[15px] tracking-[0em] navy-blue mb-[15px] font-medium">
                         {feature.title}
                       </h2>
-                      <p className="text-description !text-[#9E9E9E]">
+                      <p className="text-[14px] leading-[10px]  text-[#9E9E9E]">
                         {feature.description}
                       </p>
                       </div>

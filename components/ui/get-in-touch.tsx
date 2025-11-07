@@ -77,7 +77,7 @@ export default function GetInTouch() {
                     name="firstName"
                     value={formData.firstName}
                     onChange={handleInputChange}
-                    className="w-full px-4 h-[48px] bg-[#FAFAFA] border border-color rounded-[10px] text-black placeholder-gray-400 focus:outline-none focus:border-white/30"
+                    className="w-full px-4 h-[48px] bg-[#FAFAFA] border border-color rounded-full text-black placeholder-gray-400 focus:outline-none focus:border-white/30"
                   />
                 </div>
                 <div className="min-w-[360px] ">
@@ -90,7 +90,7 @@ export default function GetInTouch() {
                     name="lastName"
                     value={formData.lastName}
                     onChange={handleInputChange}
-                    className="w-full px-4 h-[48px] bg-[#FAFAFA] border border-color rounded-[10px] text-black placeholder-gray-400 focus:outline-none focus:border-white/30"
+                    className="w-full px-4 h-[48px] bg-[#FAFAFA] border border-color rounded-full text-black placeholder-gray-400 focus:outline-none focus:border-white/30"
                   />
                 </div>
               </div>
@@ -107,7 +107,7 @@ export default function GetInTouch() {
                     name="phone"
                     value={formData.phone}
                     onChange={handleInputChange}
-                    className="w-full px-4 h-[48px] bg-[#FAFAFA] border border-color rounded-[10px] text-black placeholder-gray-400 focus:outline-none focus:border-white/30"
+                    className="w-full px-4 h-[48px] bg-[#FAFAFA] border border-color rounded-full text-black placeholder-gray-400 focus:outline-none focus:border-white/30"
                   />
                 </div>
                 <div className="min-w-[360px] ">
@@ -120,7 +120,7 @@ export default function GetInTouch() {
                     name="email"
                     value={formData.email}
                     onChange={handleInputChange}
-                    className="w-full px-4 h-[48px] bg-[#FAFAFA] border border-color rounded-[10px] text-black placeholder-gray-400 focus:outline-none focus:border-white/30"
+                    className="w-full px-4 h-[48px] bg-[#FAFAFA] border border-color rounded-full text-black placeholder-gray-400 focus:outline-none focus:border-white/30"
                   />
                 </div>
               </div>
@@ -137,7 +137,7 @@ export default function GetInTouch() {
                   value={formData.message}
                   onChange={handleInputChange}
                   rows={4}
-                  className="w-full px-4 pt-3 h-[148px] bg-[#FAFAFA] border border-color rounded-[10px] text-black placeholder-gray-400 focus:outline-none focus:border-white/30 resize-none"
+                  className="w-full px-4 pt-3 h-[148px] bg-[#FAFAFA] border border-color rounded-[25px] text-black placeholder-gray-400 focus:outline-none focus:border-white/30 resize-none"
                   placeholder=""
                 />
               </div>

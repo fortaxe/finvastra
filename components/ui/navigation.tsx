@@ -61,9 +61,9 @@ const Navigation = () => {
             }}
           >
             <Image
-              src="/logo.svg"
+              src="/white-logo.svg"
               alt="Equitas IT INC Logo"
-              width={38.18}
+              width={35}
               height={35}
               className="w-[38.18px] h-[35px]"
             />
