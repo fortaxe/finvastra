@@ -35,7 +35,7 @@ export const NavyBlueButton = ({ name, onClick }: CustomButtonProps) => {
     return (
         <button 
         onClick={onClick}
-        className="text-white transition-colors duration-200 text-[14px] leading-[10px] flex items-center bg-[#DBB25A] px-[16px] py-[14px] rounded-full">
+        className="text-black transition-colors duration-200 text-[14px] leading-[10px] flex items-center  px-[16px] py-[14px] rounded-full border border-color hover:bg-[#FAFAFA] cursor-pointer">
            {name}
         </button>
     )

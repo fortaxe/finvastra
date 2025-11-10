@@ -3,7 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { NavyBlueButton } from "../ui/custom-button";
 
-const footerIcons =["icons/footer/1.svg", "icons/footer/2.svg", "icons/footer/3.svg", "icons/footer/4.svg"]
+const footerIcons = ["icons/footer/1.svg", "icons/footer/2.svg", "icons/footer/3.svg", "icons/footer/4.svg"]
 
 export default function Footer() {
   return (
@@ -14,24 +14,25 @@ export default function Footer() {
           {/* Left Section - Company Description & Social Media */}
           <div className="max-w-[398px]">
             <div className="flex flex-row gap-[10px]">
-              <div className="flex flex-row gap-[15px] items-center">
-                
+              <div className="flex flex-row gap-[20px] items-center">
+
                 <Image src="/footer-gold.svg" alt="Equitas IT INC" width={35} height={35} />
-                <div>
-                <p className="text-[20px] leading-[15px] tracking-[0em] text-black">
-                  Finvastra
-                </p>
-                <p className="text-[14px] leading-[10px] tracking-[0em] text-[#9E9E9E] mt-2">
-                Weaving Financial Legacies.
-                </p>
-              </div>
+               
               </div>
             </div>
             <p className="third-description !leading-[20px] text-[#9E9E9E] mt-5 max-w-[401px] mb-[20px]">
               We bridge traditional lending frameworks with new-age fintech agility, enabling institutions to grow faster, safer, and smarter through strategic debt syndication and capital structuring.
             </p>
 
-            <NavyBlueButton name="Partner With us" onClick={() => console.log("Contact Us")} />
+            <div className="flex flex-row gap-[6px] ">
+              {footerIcons.map((icon, index: number) => (
+                <div key={index} className="w-[32px] h-[32px] border border-color rounded-full flex items-center justify-center">
+                  <Image key={index} src={icon} alt="Footer Icon" width={16} height={16} />
+                </div>
+              ))}
+
+            </div>
+
           </div>
 
           {/* Right Section - Links */}
@@ -71,17 +72,9 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="flex flex-row gap-[6px] mt-[27px] justify-end">
-          {footerIcons.map((icon, index: number) => (
-            <div key={index} className="w-[32px] h-[32px] border border-color rounded-full flex items-center justify-center">
-            <Image key={index} src={icon} alt="Footer Icon" width={16} height={16} />
-            </div>
-          ))}
-          
-        </div>
 
         {/* Bottom Section */}
-        <div className="mt-[50px] flex flex-col sm:flex-row justify-between items-center gap-4 py-5 border-t border-color">
+        <div className="mt-[100px] flex flex-col sm:flex-row justify-between items-center gap-4 py-5 border-t border-color">
           <p className="third-description text-[#9e9e9e]">
             ©2025 Finvastra. All Rights Reserved
           </p>

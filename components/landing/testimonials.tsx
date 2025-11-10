@@ -52,7 +52,7 @@ const Testimonials = () => {
             {/* Background Image with Blur */}
             <div className="absolute inset-0 z-0">
                 <Image
-                    src="/review.jpg" // Placeholder - user will add actual image
+                    src="/hero.png" // Placeholder - user will add actual image
                     alt="Background"
                     fill
                     className="object-cover"
@@ -96,7 +96,7 @@ const Testimonials = () => {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: false, margin: "-50px" }}
                                 transition={{ duration: 0.6, delay: 0.1 }}
-                                className="bg-white/10  rounded-[25px] pt-[25px] pb-[20px] px-[20px] "
+                                className="bg-white/10  rounded-[25px] pt-[25px] pb-[20px] px-[20px] border border-white/20 "
                             >
                                 <h3 className="text-[16px] leading-[12px] text-white mb-2">
                                     {testimonial.name}

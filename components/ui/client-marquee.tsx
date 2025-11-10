@@ -23,7 +23,7 @@ const ClientMarquee: React.FC = () => {
   ];
   
   return (
-    <div className="relative w-full overflow-hidden py-[70px] flex items-center justify-center">
+    <div className="relative w-full overflow-hidden pb-[70px] flex items-center justify-center">
       <div className="animate-marquee whitespace-nowrap flex items-center ">
         {[...clients, ...clients].map((logo, index) => (
           <React.Fragment key={index}>

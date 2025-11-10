@@ -41,7 +41,7 @@ export default function DottedBackground({
     backgroundImage: dot,
     backgroundSize: size,
     backgroundPosition: `${gap / 2}px ${gap / 2}px`,
-    minHeight: "547px",
+    minHeight: "611px",
     width: "100%",
   };
 

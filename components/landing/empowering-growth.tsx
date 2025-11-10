@@ -1,6 +1,6 @@
 import TiltCard from "./tilt-card";
 import DottedBackground from "./dotted-bg";
-import Image from "next/image";
+
 
 const EmpoweringGrowth = () => {
     return (

@@ -7,7 +7,7 @@ import { useState, useRef } from "react";
 
 
 import { useRouter } from "next/navigation";
-import ApplicationsDropdown from "./service-dropdown";
+
 
 
 const Navigation = () => {
@@ -60,11 +60,11 @@ const Navigation = () => {
             }}
           >
             <Image
-              src="/white-logo.svg"
+              src="/footer-gold.svg"
               alt="Equitas IT INC Logo"
               width={35}
               height={35}
-              className="w-[38.18px] h-[35px] cursor-pointer"
+              className="w-[35px] h-[35px] cursor-pointer"
               onClick={() => router.push("/")}
             />
           </motion.div>
@@ -72,41 +72,104 @@ const Navigation = () => {
 
         {/* Navigation Container with Gradient Border - Sticky Center side */}
         <motion.nav
-          initial={{ y: -100 }}
-          animate={{ y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="fixed top-[50px] left-0 w-full   z-50 hidden md:block  "
+  
+          className="fixed bottom-[60px] left-0 w-full   z-50 hidden md:block  "
         >
           <div className="max-w-[1440px] mx-auto px-4 md:px-[70px] flex justify-center">
 
-            <div
-              className="relative backdrop-blur-md p-2 flex items-center justify-center rounded-full overflow-visible  bg-[#011527]"
+            <motion.div
+              className="relative backdrop-blur-md pl-[3px] pr-[18px] py-[3px] flex flex-col items-center justify-center overflow-hidden bg-white rounded-full  border border-color"
+             
+              animate={{
+                borderRadius: "70px"
+              }}
+              transition={{ duration: 0.3 }}
             >
-              {/* Desktop Navigation - Right aligned */}
-              <div className="flex items-center gap-2 relative z-10">
-                <div className="relative" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-                  <ApplicationsDropdown />
+              {/* Dropdown Content - Above nav items */}
+              {/* <motion.div
+                initial={{ opacity: 0, height: 0 }}
+                animate={{ 
+                  opacity: isServicesOpen ? 1 : 0,
+                  height: isServicesOpen ? "auto" : 0
+                }}
+                transition={{ duration: 0.3 }}
+                className={`w-full mb-2 overflow-hidden ${isServicesOpen ? 'pointer-events-auto' : 'pointer-events-none'}`}
+              >
+                <div className="bg-white rounded-[25px] px-4 py-[5px] border border-gray-200 divide-y divide-gray-200 shadow-md">
+                  <Link href="/finvastra-advisors" className="block py-[11px] text-[14px] leading-[10px] text-black hover:text-[#DBB25A] transition-colors">
+                    Finvastra Advisors Pvt. Ltd.
+                  </Link>
+                  <Link href="/finvastra-wealth" className="block py-[11px] text-[14px] leading-[10px] text-black hover:text-[#DBB25A] transition-colors">
+                    Finvastra Wealth Pvt. Ltd.
+                  </Link>
+                  <Link href="/finvastra-insurance-marketing" className="block py-[11px] text-[14px] leading-[10px] text-black hover:text-[#DBB25A] transition-colors">
+                    Finvastra Insurance Marketing Pvt. Ltd.
+                  </Link>
                 </div>
+              </motion.div> */}
 
-                <Link href="/company" className="text-white transition-colors duration-200 text-[14px] leading-[10px] flex items-center bg-[#041D36] border border-[#092F52] px-[16px] py-[14px] rounded-full">
+              {/* Desktop Navigation - White pill with items */}
+              <div className="flex items-center gap-[18px] relative z-10">
+                {/* Home Icon Button */}
+                <motion.button
+                  onClick={() => router.push("/")}
+                  className="flex items-center justify-center w-[56px] h-[42px] rounded-full bg-white border border-gray-200  transition-colors cursor-pointer bg-[#FAFAFA]" 
+                
+                >
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fillRule="evenodd" clipRule="evenodd" d="M5.25 8.00001H6.75V19.5H17.25V8.00001H18.75V18.75C18.75 19.9926 17.7426 21 16.5 21H7.5C6.25736 21 5.25 19.9926 5.25 18.75L5.25 8.00001Z" fill="#000000"></path>
+                    <path fillRule="evenodd" clipRule="evenodd" d="M10.7166 3.72814C11.4883 3.19225 12.5117 3.19225 13.2834 3.72814L22.0438 9.81177L21.1882 11.0438L12 4.66312L2.81177 11.0438L1.95618 9.81177L10.7166 3.72814Z" fill="#000000"></path>
+                  </svg>
+                </motion.button>
+
+                {/* Verticals Link */}
+                <motion.div 
+                  className="text-black transition-colors duration-200 text-[14px] leading-[10px] flex items-center gap-1  py-[14px] rounded-full cursor-pointer hover:bg-gray-50"
+                  animate={{ 
+                    backgroundColor: isServicesOpen ? "#f3f4f6" : "transparent"
+                  }}
+                  transition={{ duration: 0.3 }}
+                >
+                  Verticals
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="#000000" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M8 8.93934L4.53033 5.46967L3.46967 6.53033L6.58578 9.64645C7.36683 10.4275 8.63316 10.4275 9.41421 9.64645L12.5303 6.53033L11.4697 5.46967L8 8.93934Z" data-mode="fill"></path></svg>
+                </motion.div>
+
+                {/* Company Link with External Icon */}
+                <Link 
+                  href="/company" 
+                  className="text-black transition-colors duration-200 text-[14px] leading-[10px] flex items-center gap-1  py-[14px] rounded-full hover:bg-gray-50"
+                >
                   Company
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="#000000" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M10.166 9.88297V10.55H11.5V9.88297V5.16701C11.5 4.79862 11.2014 4.49999 10.833 4.49999H6.11703H5.45002V5.83402H6.11703H9.22266L4.97165 10.085L4.5 10.5567L5.4433 11.5L5.91496 11.0283L10.166 6.77731V9.88297Z" data-mode="fill"></path></svg>
                 </Link>
 
-                <Link href="/company" className="text-white transition-colors duration-200 text-[14px] leading-[10px] flex items-center bg-[#041D36] border border-[#092F52] px-[16px] py-[14px] rounded-full">
+                {/* Partner With Us Link */}
+                <Link 
+                  href="/company" 
+                  className="text-black transition-colors duration-200 text-[14px] leading-[10px] flex items-center  py-[14px] rounded-full hover:bg-gray-50"
+                >
                   Partner With Us
                 </Link>
 
-                <Link href="/company" className="text-white transition-colors duration-200 text-[14px] leading-[10px] flex items-center bg-[#041D36] border border-[#092F52] px-[16px] py-[14px] rounded-full">
+                {/* Support Link */}
+                <Link 
+                  href="/company" 
+                  className="text-black transition-colors duration-200 text-[14px] leading-[10px] flex items-center  py-[14px] rounded-full hover:bg-gray-50"
+                >
                   Support
                 </Link>
 
               </div>
-            </div>
+            </motion.div>
           </div>
         </motion.nav>
 
 
-
+        <div>
+          <p className="text-[14px] leading-[10px] tracking-[0em] text-white underline">
+          Request a Callback
+          </p>
+        </div>
       </div>
 
       {/* Mobile Full Screen Menu - Moved outside of nav */}
