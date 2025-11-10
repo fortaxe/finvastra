@@ -4,18 +4,32 @@
 import { motion } from "motion/react";
 import Navigation from "../ui/navigation";
 import CustomButton, { ImageButton } from "../ui/custom-button";
+import LiquidEther from "../LiquidEther";
 
 const Hero = () => {
     return (
 
-        <div className="min-h-screen w-full bg-[#092F52] relative">
-            {/* Blue Radial Glow Background */}
-            <div
-                className="absolute inset-0 z-0"
-                style={{
-                    backgroundImage: `radial-gradient(circle 600px at 50% 50%, rgba(59,130,246,0.3), transparent)`,
-                }}
-            />
+        <div className="min-h-screen w-full bg-white relative">
+            {/* LiquidEther Background */}
+            <div style={{ width: '100%', height: '100%', position: 'absolute' }} className="inset-0 z-0">
+                <LiquidEther
+                    colors={['#5227FF', '#FF9FFC', '#B19EEF']}
+                    mouseForce={20}
+                    cursorSize={100}
+                    isViscous={false}
+                    viscous={30}
+                    iterationsViscous={32}
+                    iterationsPoisson={32}
+                    resolution={0.5}
+                    isBounce={false}
+                    autoDemo={true}
+                    autoSpeed={0.5}
+                    autoIntensity={2.2}
+                    takeoverDuration={0.25}
+                    autoResumeDelay={3000}
+                    autoRampDuration={0.6}
+                />
+            </div>
 
 
             <div className="absolute top-0 left-0 right-0 z-50">

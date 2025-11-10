@@ -11,6 +11,7 @@ import { landingWhyChoose } from "./landing-why-choose-data";
 export default function Home() {
   return (
     <div>
+
       <Hero />
       <EmpoweringGrowth />
       <ClientMarquee />
