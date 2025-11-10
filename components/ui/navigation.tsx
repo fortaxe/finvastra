@@ -6,16 +6,18 @@ import Image from "next/image";
 import { useState, useRef } from "react";
 
 
-import { useRouter } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 
 
 
 const Navigation = () => {
   const [isMobileOpen, setIsMobileOpen] = useState<boolean>(false);
   const [isServicesOpen, setIsServicesOpen] = useState<boolean>(false);
+  const [isCompanyHovered, setIsCompanyHovered] = useState<boolean>(false);
   const closeTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   const router = useRouter();
+  const pathname = usePathname();
 
   const handleMouseEnter = (): void => {
     if (closeTimeoutRef.current) {
@@ -78,42 +80,58 @@ const Navigation = () => {
           <div className="max-w-[1440px] mx-auto px-4 md:px-[70px] flex justify-center">
 
             <motion.div
-              className="relative backdrop-blur-md pl-[3px] pr-[18px] py-[3px] flex flex-col items-center justify-center overflow-hidden bg-white rounded-full  border border-color"
-             
+              className="relative backdrop-blur-md p-[3px] flex flex-col items-center justify-center overflow-hidden bg-white  border border-color"
               animate={{
-                borderRadius: "70px"
+                borderRadius: "25px"
               }}
               transition={{ duration: 0.3 }}
             >
               {/* Dropdown Content - Above nav items */}
-              {/* <motion.div
+              <motion.div
                 initial={{ opacity: 0, height: 0 }}
                 animate={{ 
                   opacity: isServicesOpen ? 1 : 0,
                   height: isServicesOpen ? "auto" : 0
                 }}
                 transition={{ duration: 0.3 }}
-                className={`w-full mb-2 overflow-hidden ${isServicesOpen ? 'pointer-events-auto' : 'pointer-events-none'}`}
+                className={`w-full  overflow-hidden ${isServicesOpen ? 'pointer-events-auto' : 'pointer-events-none'}`}
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}
               >
-                <div className="bg-white rounded-[25px] px-4 py-[5px] border border-gray-200 divide-y divide-gray-200 shadow-md">
-                  <Link href="/finvastra-advisors" className="block py-[11px] text-[14px] leading-[10px] text-black hover:text-[#DBB25A] transition-colors">
-                    Finvastra Advisors Pvt. Ltd.
+                <div className="bg-white px-[15px] pt-[15px] pb-[30px] gap-[12.5px] flex flex-col">
+                  <Link 
+                    href="/finvastra-advisors" 
+                    className={`block text-[14px] leading-[10px] transition-colors font-medium ${
+                      pathname === "/finvastra-advisors" ? "text-black" : "text-[#C1C1C1] hover:text-black"
+                    }`}
+                  >
+                    Finvastra Advisors
                   </Link>
-                  <Link href="/finvastra-wealth" className="block py-[11px] text-[14px] leading-[10px] text-black hover:text-[#DBB25A] transition-colors">
-                    Finvastra Wealth Pvt. Ltd.
+                  <Link 
+                    href="/finvastra-wealth" 
+                    className={`block text-[14px] leading-[10px] transition-colors ${
+                      pathname === "/finvastra-wealth" ? "text-black" : "text-[#C1C1C1] hover:text-black"
+                    }`}
+                  >
+                    Finvastra Wealth
                   </Link>
-                  <Link href="/finvastra-insurance-marketing" className="block py-[11px] text-[14px] leading-[10px] text-black hover:text-[#DBB25A] transition-colors">
-                    Finvastra Insurance Marketing Pvt. Ltd.
+                  <Link 
+                    href="/finvastra-insurance-marketing" 
+                    className={`block text-[14px] leading-[10px] transition-colors ${
+                      pathname === "/finvastra-insurance-marketing" ? "text-black" : "text-[#C1C1C1] hover:text-black"
+                    }`}
+                  >
+                    Finvastra Insurance Marketing
                   </Link>
                 </div>
-              </motion.div> */}
+              </motion.div>
 
               {/* Desktop Navigation - White pill with items */}
-              <div className="flex items-center gap-[18px] relative z-10">
+              <div className="flex items-center gap-[3px] relative z-10">
                 {/* Home Icon Button */}
                 <motion.button
                   onClick={() => router.push("/")}
-                  className="flex items-center justify-center w-[56px] h-[42px] rounded-full bg-white border border-gray-200  transition-colors cursor-pointer bg-[#FAFAFA]" 
+                  className="flex items-center justify-center w-[56px] h-[42px] rounded-full bg-[#FAFAFA] border border-color transition-colors cursor-pointer " 
                 
                 >
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -124,29 +142,61 @@ const Navigation = () => {
 
                 {/* Verticals Link */}
                 <motion.div 
-                  className="text-black transition-colors duration-200 text-[14px] leading-[10px] flex items-center gap-1  py-[14px] rounded-full cursor-pointer hover:bg-gray-50"
+                  className={`text-black transition-colors duration-200 text-[14px] leading-[10px] flex items-center gap-1  py-[14px] rounded-full cursor-pointer  px-[18px] ${
+                    (pathname === "/finvastra-advisors" || pathname === "/finvastra-wealth" || pathname === "/finvastra-insurance-marketing") && "bg-[#fafafa] border border-color" 
+                  }`}
+                  onMouseEnter={handleMouseEnter}
+                  onMouseLeave={handleMouseLeave}
                   animate={{ 
-                    backgroundColor: isServicesOpen ? "#f3f4f6" : "transparent"
+                    backgroundColor: isServicesOpen ? "#fafafa" : "transparent"
                   }}
                   transition={{ duration: 0.3 }}
                 >
                   Verticals
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="#000000" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M8 8.93934L4.53033 5.46967L3.46967 6.53033L6.58578 9.64645C7.36683 10.4275 8.63316 10.4275 9.41421 9.64645L12.5303 6.53033L11.4697 5.46967L8 8.93934Z" data-mode="fill"></path></svg>
+                  <motion.svg 
+                    width="16" 
+                    height="16" 
+                    viewBox="0 0 16 16" 
+                    fill="#000000" 
+                    xmlns="http://www.w3.org/2000/svg"
+                    animate={{ 
+                      rotate: isServicesOpen ? 180 : 0
+                    }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    <path fillRule="evenodd" clipRule="evenodd" d="M8 8.93934L4.53033 5.46967L3.46967 6.53033L6.58578 9.64645C7.36683 10.4275 8.63316 10.4275 9.41421 9.64645L12.5303 6.53033L11.4697 5.46967L8 8.93934Z" data-mode="fill"></path>
+                  </motion.svg>
                 </motion.div>
 
                 {/* Company Link with External Icon */}
                 <Link 
                   href="/company" 
-                  className="text-black transition-colors duration-200 text-[14px] leading-[10px] flex items-center gap-1  py-[14px] rounded-full hover:bg-gray-50"
+                  className="text-black transition-colors duration-200 text-[14px] leading-[10px] flex items-center gap-1  py-[14px] rounded-full hover:bg-[#fafafa] px-[18px]"
+                  onMouseEnter={() => setIsCompanyHovered(true)}
+                  onMouseLeave={() => setIsCompanyHovered(false)}
                 >
                   Company
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="#000000" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M10.166 9.88297V10.55H11.5V9.88297V5.16701C11.5 4.79862 11.2014 4.49999 10.833 4.49999H6.11703H5.45002V5.83402H6.11703H9.22266L4.97165 10.085L4.5 10.5567L5.4433 11.5L5.91496 11.0283L10.166 6.77731V9.88297Z" data-mode="fill"></path></svg>
+                  <motion.svg 
+                    width="16" 
+                    height="16" 
+                    viewBox="0 0 16 16" 
+                    fill="#000000" 
+                    xmlns="http://www.w3.org/2000/svg"
+                    initial={{ x: 0, y: 0 }}
+                    animate={{ 
+                      x: isCompanyHovered ? 2 : 0,
+                      y: isCompanyHovered ? -2 : 0
+                    }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    <path fillRule="evenodd" clipRule="evenodd" d="M10.166 9.88297V10.55H11.5V9.88297V5.16701C11.5 4.79862 11.2014 4.49999 10.833 4.49999H6.11703H5.45002V5.83402H6.11703H9.22266L4.97165 10.085L4.5 10.5567L5.4433 11.5L5.91496 11.0283L10.166 6.77731V9.88297Z" data-mode="fill"></path>
+                  </motion.svg>
                 </Link>
 
                 {/* Partner With Us Link */}
                 <Link 
                   href="/company" 
-                  className="text-black transition-colors duration-200 text-[14px] leading-[10px] flex items-center  py-[14px] rounded-full hover:bg-gray-50"
+                  className="text-black transition-colors duration-200 text-[14px] leading-[10px] flex items-center  py-[14px] rounded-full hover:bg-[#fafafa] px-[18px]"
                 >
                   Partner With Us
                 </Link>
@@ -154,7 +204,7 @@ const Navigation = () => {
                 {/* Support Link */}
                 <Link 
                   href="/company" 
-                  className="text-black transition-colors duration-200 text-[14px] leading-[10px] flex items-center  py-[14px] rounded-full hover:bg-gray-50"
+                  className="text-black transition-colors duration-200 text-[14px] leading-[10px] flex items-center  py-[14px] rounded-full hover:bg-[#fafafa] px-[18px]"
                 >
                   Support
                 </Link>
