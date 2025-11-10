@@ -81,10 +81,11 @@ const Navigation = () => {
 
             <motion.div
               className="relative backdrop-blur-md p-[3px] flex flex-col items-center justify-center overflow-hidden bg-white  border border-color"
+              initial={{ borderRadius: "25px" }}
               animate={{
                 borderRadius: "25px"
               }}
-              transition={{ duration: 0.3 }}
+              transition={{ duration: 0.2 }}
             >
               {/* Dropdown Content - Above nav items */}
               <motion.div
@@ -142,15 +143,15 @@ const Navigation = () => {
 
                 {/* Verticals Link */}
                 <motion.div 
-                  className={`text-black transition-colors duration-200 text-[14px] leading-[10px] flex items-center gap-1  py-[14px] rounded-full cursor-pointer  px-[18px] ${
-                    (pathname === "/finvastra-advisors" || pathname === "/finvastra-wealth" || pathname === "/finvastra-insurance-marketing") && "bg-[#fafafa] border border-color" 
+                  className={`text-black transition-colors duration-200 text-[14px] leading-[10px] flex items-center gap-1  h-[42px] rounded-full cursor-pointer  px-[18px] ${
+                    (pathname === "/finvastra-advisors" || pathname === "/finvastra-wealth" || pathname === "/finvastra-insurance-marketing") && "border border-color" 
                   }`}
                   onMouseEnter={handleMouseEnter}
                   onMouseLeave={handleMouseLeave}
                   animate={{ 
-                    backgroundColor: isServicesOpen ? "#fafafa" : "transparent"
+                    backgroundColor: isServicesOpen || (pathname === "/finvastra-advisors" || pathname === "/finvastra-wealth" || pathname === "/finvastra-insurance-marketing") ? "#fafafa" : "transparent"
                   }}
-                  transition={{ duration: 0.3 }}
+                  transition={{ duration: 0.2 }}
                 >
                   Verticals
                   <motion.svg 
@@ -162,7 +163,7 @@ const Navigation = () => {
                     animate={{ 
                       rotate: isServicesOpen ? 180 : 0
                     }}
-                    transition={{ duration: 0.3 }}
+                    transition={{ duration: 0.2 }}
                   >
                     <path fillRule="evenodd" clipRule="evenodd" d="M8 8.93934L4.53033 5.46967L3.46967 6.53033L6.58578 9.64645C7.36683 10.4275 8.63316 10.4275 9.41421 9.64645L12.5303 6.53033L11.4697 5.46967L8 8.93934Z" data-mode="fill"></path>
                   </motion.svg>
@@ -171,7 +172,7 @@ const Navigation = () => {
                 {/* Company Link with External Icon */}
                 <Link 
                   href="/company" 
-                  className="text-black transition-colors duration-200 text-[14px] leading-[10px] flex items-center gap-1  py-[14px] rounded-full hover:bg-[#fafafa] px-[18px]"
+                  className="text-black transition-colors duration-200 text-[14px] leading-[10px] flex items-center gap-1  h-[42px] rounded-full hover:bg-[#fafafa] px-[18px]"
                   onMouseEnter={() => setIsCompanyHovered(true)}
                   onMouseLeave={() => setIsCompanyHovered(false)}
                 >
@@ -195,16 +196,16 @@ const Navigation = () => {
 
                 {/* Partner With Us Link */}
                 <Link 
-                  href="/company" 
-                  className="text-black transition-colors duration-200 text-[14px] leading-[10px] flex items-center  py-[14px] rounded-full hover:bg-[#fafafa] px-[18px]"
+                  href="/partner" 
+                  className="text-black transition-colors duration-200 text-[14px] leading-[10px] flex items-center  h-[42px] rounded-full hover:bg-[#fafafa] px-[18px]"
                 >
                   Partner With Us
                 </Link>
 
                 {/* Support Link */}
                 <Link 
-                  href="/company" 
-                  className="text-black transition-colors duration-200 text-[14px] leading-[10px] flex items-center  py-[14px] rounded-full hover:bg-[#fafafa] px-[18px]"
+                  href="/support" 
+                  className="text-black transition-colors duration-200 text-[14px] leading-[10px] flex items-center  h-[42px] rounded-full hover:bg-[#fafafa] px-[18px]"
                 >
                   Support
                 </Link>

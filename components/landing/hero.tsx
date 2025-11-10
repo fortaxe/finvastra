@@ -26,31 +26,29 @@ const Hero = () => {
             </div>
             {/* Hero Content Overlay */}
             <div className="relative z-10 flex items-end justify-start min-h-screen pb-[178px]">
-                <div className=" px-4 sm:px-6 lg:px-15">
+                <div className="w-full px-4 sm:px-6 lg:px-15 max-w-[1440px] mx-auto">
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8 }}
-                        className=" max-w-[1440px] mx-auto flex justify-between "
+                        className="flex justify-between w-full"
                     >
                         <div>
-                        <h1 className="heading-style   ">
-                            Weaving Financial
+                            <h1 className="heading-style">
+                                Weaving Financial
 
 
-                            Legacies.
-                        </h1>
+                                Legacies.
+                            </h1>
                         </div>
                         <div>
                             <p className="text-[54px] leading-[39px] tracking-[0.04em] text-white pb-[15px]">
                                 25+
                             </p>
-                        <p className="text-description  mx-auto max-w-[365px]">
-                            Finvastra partners with NBFCs, fintechs, and institutions to structure debt, unlock capital, and build sustainable financial ecosystems. Together, we transform growth into legacy.
-                        </p>
+                            <p className="text-description max-w-[365px]">
+                                Finvastra partners with NBFCs, fintechs, and institutions to structure debt, unlock capital, and build sustainable financial ecosystems. Together, we transform growth into legacy.
+                            </p>
                         </div>
-                      
-
                     </motion.div>
                 </div>
             </div>

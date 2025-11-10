@@ -3,7 +3,6 @@
 
 import { motion } from "motion/react";
 import Navigation from "@/components/ui/navigation";
-import TagButton from "./tag-button";
 
 interface DivisionHeroProps {
     title: string;
@@ -15,12 +14,15 @@ interface DivisionHeroProps {
 const DivisionHero = ({ title, description, tags, maxWidth = "899px" }: DivisionHeroProps) => {
     return (
 
-        <div className="min-h-screen w-full bg-[#0f172a] relative">
-            {/* Blue Radial Glow Background */}
-            <div
+        <div className="min-h-screen w-full bg-white relative">
+            {/* Hero Background Image */}
+            <div 
                 className="absolute inset-0 z-0"
                 style={{
-                    backgroundImage: `radial-gradient(circle 600px at 50% 50%, rgba(59,130,246,0.3), transparent)`,
+                    backgroundImage: 'url(/hero.png)',
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                    backgroundRepeat: 'no-repeat'
                 }}
             />
 
@@ -29,32 +31,26 @@ const DivisionHero = ({ title, description, tags, maxWidth = "899px" }: Division
                 <Navigation />
             </div>
             {/* Hero Content Overlay */}
-            <div className="relative z-10 flex items-center justify-center min-h-screen ">
-                <div className=" px-4 sm:px-6 lg:px-8 ">
+            <div className="relative z-10 flex items-end justify-start min-h-screen pb-[178px]">
+                <div className="w-full px-4 sm:px-6 lg:px-15 max-w-[1440px] mx-auto">
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8 }}
-                        className="text-center  mx-auto"
-                        style={{ maxWidth }}
+                        className="flex justify-between w-full"
                     >
-                        <h1 className="heading-style  ] mx-auto">
-                            {title}
-
-
-                    
-                        </h1>
-                        {/* <p className="text-description  mx-auto py-[30px]">
-                            {description}
-                        </p> */}
-
-                        {/* Industry Tags */}
-                        {/* <div className="flex justify-center gap-[10px]">
-                            {tags.map((tag) => (
-                                <TagButton name={tag} onClick={() => { }} />
-                            ))}
-                        </div> */}
-
+                        <div>
+                            <h1 className="heading-style">
+                                {title}
+                            </h1>
+                        </div>
+                        {description && (
+                            <div>
+                                <p className="text-description max-w-[365px]">
+                                    {description}
+                                </p>
+                            </div>
+                        )}
                     </motion.div>
                 </div>
             </div>
