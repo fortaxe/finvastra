@@ -224,9 +224,18 @@ const JobApplication = () => {
 
             {/* Apply Now Section */}
             <div>
-              <h4 className="primary-description">
+              <h4 className="primary-description flex flex-row items-center gap-[3px] mb-[10px]">
                 Apply Now
-                <span>↗</span>
+                <motion.svg 
+                    width="16" 
+                    height="16" 
+                    viewBox="0 0 16 16" 
+                    fill="#000000" 
+                    xmlns="http://www.w3.org/2000/svg"
+           
+                  >
+                    <path fillRule="evenodd" clipRule="evenodd" d="M10.166 9.88297V10.55H11.5V9.88297V5.16701C11.5 4.79862 11.2014 4.49999 10.833 4.49999H6.11703H5.45002V5.83402H6.11703H9.22266L4.97165 10.085L4.5 10.5567L5.4433 11.5L5.91496 11.0283L10.166 6.77731V9.88297Z" data-mode="fill"></path>
+                  </motion.svg>
               </h4>
               <div className=" flex flex-row gap-[10px]">
                 <a

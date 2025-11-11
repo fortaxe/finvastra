@@ -69,7 +69,7 @@ export default function GetInTouch() {
               <div className="flex  gap-5">
                 <div className="min-w-[360px] ">
                   <label htmlFor="firstName" className="block text-[16px] leading-[14px] tracking-[0em] text-black mb-[10px]">
-                    First Name
+                    First Name*
                   </label>
                   <input
                     type="text"
@@ -99,7 +99,7 @@ export default function GetInTouch() {
               <div className="flex flex-wrap gap-5">
                 <div className="min-w-[360px] ">
                   <label htmlFor="phone" className="block text-[16px] leading-[14px] tracking-[0em] text-black mb-[10px]">
-                    Phone
+                    Phone*
                   </label>
                   <input
                     type="tel"
@@ -112,7 +112,7 @@ export default function GetInTouch() {
                 </div>
                 <div className="min-w-[360px] ">
                   <label htmlFor="email" className="block text-[16px] leading-[14px] tracking-[0em] text-black mb-[10px]">
-                    Email
+                    Email*
                   </label>
                   <input
                     type="email"

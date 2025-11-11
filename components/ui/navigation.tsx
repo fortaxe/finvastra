@@ -210,12 +210,12 @@ const Navigation = () => {
 
                 {/* Careers Link */}
                 <Link 
-                  href="/career" 
+                  href="/careers" 
                   className={`text-black transition-colors duration-200 text-[14px] leading-[10px] flex items-center  h-[42px] rounded-full hover:bg-[#F0F0F0] px-[18px] ${
-                    pathname === "/career" ? "bg-[#F0F0F0]" : ""
+                    pathname === "/careers" ? "bg-[#F0F0F0]" : ""
                   }`}
                 >
-                  Careers
+                  Career
                 </Link>
 
                 {/* Support Link */}
