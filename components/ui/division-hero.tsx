@@ -37,7 +37,7 @@ const DivisionHero = ({ title, description, tags, maxWidth = "899px" }: Division
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8 }}
-                        className="flex justify-between w-full"
+                        className="flex justify-between  items-end w-full"
                     >
                         <div>
                             <h1 className="heading-style">

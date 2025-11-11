@@ -135,7 +135,7 @@ const Navigation = () => {
                 {/* Home Icon Button */}
                 <motion.button
                   onClick={() => router.push("/")}
-                  className="flex items-center justify-center w-[56px] h-[42px] rounded-full bg-[#FAFAFA] border border-color transition-colors cursor-pointer " 
+                  className="flex items-center justify-center w-[56px] h-[42px] rounded-full bg-[#F0F0F0]  transition-colors cursor-pointer " 
                 
                 >
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -146,14 +146,13 @@ const Navigation = () => {
 
                 {/* Verticals Link */}
                 <motion.div 
-                  className={`text-black transition-colors duration-200 text-[14px] leading-[10px] flex items-center gap-1  h-[42px] rounded-full cursor-pointer  px-[18px] ${
-                    (pathname === "/finvastra-advisors" || pathname === "/finvastra-wealth" || pathname === "/finvastra-insurance-marketing") && "border border-color" 
-                  }`}
+                  className={`text-black transition-colors duration-200 text-[14px] leading-[10px] flex items-center gap-1  h-[42px] rounded-full cursor-pointer  px-[18px] `}
                   onMouseEnter={handleMouseEnter}
                   onMouseLeave={handleMouseLeave}
                   animate={{ 
-                    backgroundColor: isServicesOpen || (pathname === "/finvastra-advisors" || pathname === "/finvastra-wealth" || pathname === "/finvastra-insurance-marketing") ? "#fafafa" : "transparent"
+                    backgroundColor: isServicesOpen || (pathname === "/finvastra-advisors" || pathname === "/finvastra-wealth" || pathname === "/finvastra-insurance-marketing") ? "#F0F0F0" : "transparent"
                   }}
+                  whileHover={{ backgroundColor: "#F0F0F0" }}
                   transition={{ duration: 0.2 }}
                 >
                   Verticals
@@ -175,7 +174,9 @@ const Navigation = () => {
                 {/* Company Link with External Icon */}
                 <Link 
                   href="/company" 
-                  className="text-black transition-colors duration-200 text-[14px] leading-[10px] flex items-center gap-1  h-[42px] rounded-full hover:bg-[#fafafa] px-[18px]"
+                  className={`text-black transition-colors duration-200 text-[14px] leading-[10px] flex items-center gap-1  h-[42px] rounded-full hover:bg-[#F0F0F0] px-[18px] ${
+                    pathname === "/company" ? "bg-[#F0F0F0]" : ""
+                  }`}
                   onMouseEnter={() => setIsCompanyHovered(true)}
                   onMouseLeave={() => setIsCompanyHovered(false)}
                 >
@@ -200,7 +201,9 @@ const Navigation = () => {
                 {/* Partner With Us Link */}
                 <Link 
                   href="/partner" 
-                  className="text-black transition-colors duration-200 text-[14px] leading-[10px] flex items-center  h-[42px] rounded-full hover:bg-[#fafafa] px-[18px]"
+                  className={`text-black transition-colors duration-200 text-[14px] leading-[10px] flex items-center  h-[42px] rounded-full hover:bg-[#F0F0F0] px-[18px] ${
+                    pathname === "/partner" ? "bg-[#F0F0F0]" : ""
+                  }`}
                 >
                   Partner With Us
                 </Link>
@@ -208,7 +211,9 @@ const Navigation = () => {
                 {/* Support Link */}
                 <Link 
                   href="/support" 
-                  className="text-black transition-colors duration-200 text-[14px] leading-[10px] flex items-center  h-[42px] rounded-full hover:bg-[#fafafa] px-[18px]"
+                  className={`text-black transition-colors duration-200 text-[14px] leading-[10px] flex items-center  h-[42px] rounded-full hover:bg-[#F0F0F0] px-[18px] ${
+                    pathname === "/support" ? "bg-[#F0F0F0]" : ""
+                  }`}
                 >
                   Support
                 </Link>

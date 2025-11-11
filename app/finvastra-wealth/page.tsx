@@ -10,12 +10,12 @@ const WealthPage = () => {
     return (
         <div>
             <WealthHero />
-            <ContentSection 
+            {/* <ContentSection 
                 title={wealthContent.title}
                 highlightedWord={wealthContent.highlightedWord}
                 description={wealthContent.description}
                 buttons={wealthContent.buttons}
-            />
+            /> */}
             <WealthFeatures />
   
                 <WhyChoose 

@@ -10,12 +10,12 @@ export default function AdvisorsPage() {
     return (
         <div>
             <AdvisorsHero />
-            <ContentSection 
+            {/* <ContentSection 
                 title={advisorsContent.title}
                 highlightedWord={advisorsContent.highlightedWord}
                 description={advisorsContent.description}
                 buttons={advisorsContent.buttons}
-            />
+            /> */}
             <AdvisorsFeatures />
       
                 <WhyChoose 

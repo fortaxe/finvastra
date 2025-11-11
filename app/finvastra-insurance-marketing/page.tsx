@@ -10,12 +10,12 @@ const InsuranceMarketingPage = () => {
     return (
         <div>
             <InsuranceHero />
-            <ContentSection 
+            {/* <ContentSection 
                 title={insuranceContent.title}
                 highlightedWord={insuranceContent.highlightedWord}
                 description={insuranceContent.description}
                 buttons={insuranceContent.buttons}
-            />
+            /> */}
             <InsuranceFeatures />
       
                 <WhyChoose 
