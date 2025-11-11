@@ -208,6 +208,16 @@ const Navigation = () => {
                   Partner With Us
                 </Link>
 
+                {/* Careers Link */}
+                <Link 
+                  href="/career" 
+                  className={`text-black transition-colors duration-200 text-[14px] leading-[10px] flex items-center  h-[42px] rounded-full hover:bg-[#F0F0F0] px-[18px] ${
+                    pathname === "/career" ? "bg-[#F0F0F0]" : ""
+                  }`}
+                >
+                  Careers
+                </Link>
+
                 {/* Support Link */}
                 <Link 
                   href="/support" 
@@ -312,7 +322,7 @@ const Navigation = () => {
 
                   <li className="border-b border-neutral-700 -mx-4">
                     <Link
-                      href="/careers"
+                      href="/career"
                       className="block font-medium px-4 py-[15px] text-white text-[28px] leading-none tracking-0 transition-colors"
                       onClick={() => setIsMobileOpen(false)}
                     >
