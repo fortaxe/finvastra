@@ -345,7 +345,6 @@ const JobApplication = () => {
                     type="text"
                     id="location"
                     {...register("location", { required: "Location is required" })}
-                    defaultValue={currentJob.location}
                     className="w-full px-4 h-[48px] bg-[#FAFAFA] border border-color rounded-full text-black placeholder-gray-400 focus:outline-none focus:border-white/30"
                   />
                   {errors.location && (
