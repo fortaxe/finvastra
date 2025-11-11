@@ -41,8 +41,8 @@ function AccordionTrigger({
         {...props}
       >
         {children}
-        <Plus className="plus-icon text-muted-foreground pointer-events-none size-4 shrink-0 transition-all duration-200" />
-        <Minus className="minus-icon text-muted-foreground pointer-events-none size-4 shrink-0 transition-all duration-200 hidden" />
+        <Plus className="plus-icon text-black pointer-events-none size-4 shrink-0 transition-all duration-200 p-0 m-0" />
+        <Minus className="minus-icon text-black pointer-events-none size-4 shrink-0 transition-all duration-200 hidden p-0 m-0" />
       </AccordionPrimitive.Trigger>
     </AccordionPrimitive.Header>
   )
