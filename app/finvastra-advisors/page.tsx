@@ -1,9 +1,7 @@
 import AdvisorsHero from "./advisors-hero";
 import AdvisorsFeatures from "./features";
 import WhyChoose from "@/components/landing/why-choose";
-import ContentSection from "@/components/ui/content-section";
 import GetInTouch from "@/components/ui/get-in-touch";
-import { advisorsContent } from "./advisors-content-data";
 import { advisorsWhyChoose } from "./advisors-why-choose-data";
 
 export default function AdvisorsPage() {

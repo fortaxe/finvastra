@@ -1,9 +1,7 @@
 import WealthHero from "./wealth-hero";
 import WealthFeatures from "./features";
 import WhyChoose from "@/components/landing/why-choose";
-import ContentSection from "@/components/ui/content-section";
 import GetInTouch from "@/components/ui/get-in-touch";
-import { wealthContent } from "./wealth-content-data";
 import { wealthWhyChoose } from "./wealth-why-choose-data";
 
 const WealthPage = () => {
