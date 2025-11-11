@@ -57,6 +57,9 @@ const Navigation = () => {
         <div className="hidden md:block relative z-[60]">
           <motion.div
             className="shrink-0"
+            whileHover={{
+              rotate: 180
+            }}
             style={{
               marginTop: 'calc((50px + 9px + 13px) - 60px - 16.5px)' // navbar center - parent padding - half logo height
             }}
