@@ -100,11 +100,11 @@ const Testimonials = () => {
                                 <h3 className="text-[16px] leading-[12px] text-white mb-2">
                                     {testimonial.name}
                                 </h3>
-                                <p className="third-description text-white mb-4">
+                                <p className="third-description text-white mb-[15px]">
                                     {testimonial.title}
                                 </p>
                                 <p className="text-[16px] leading-[22px] tracking-[0em] text-white">
-                                    &quot;{testimonial.quote}&quot;
+                                        {testimonial.quote}&quot;
                                 </p>
                             </motion.div>
                         ))}

@@ -322,7 +322,7 @@ const Navigation = () => {
 
                   <li className="border-b border-neutral-700 -mx-4">
                     <Link
-                      href="/career"
+                      href="/careers"
                       className="block font-medium px-4 py-[15px] text-white text-[28px] leading-none tracking-0 transition-colors"
                       onClick={() => setIsMobileOpen(false)}
                     >
