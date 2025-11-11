@@ -48,7 +48,7 @@ const Testimonials = () => {
     ];
 
     return (
-        <div className="w-full relative h-[847px] overflow-hidden">
+        <div className="w-full relative h-[850px] overflow-hidden">
             {/* Background Image with Blur */}
             <div className="absolute inset-0 z-0">
                 <Image
@@ -58,12 +58,11 @@ const Testimonials = () => {
                     className="object-cover"
                   
                 />
-                {/* Dark overlay for better text readability */}
-                <div className="absolute inset-0 bg-black/40" />
+     
             </div>
 
             {/* Content */}
-            <div className="relative z-10 w-full max-w-[1440px] mx-auto px-4 md:px-[60px] pt-[60px]">
+            <div className="relative z-10 w-full max-w-[1440px] mx-auto px-4 md:px-[60px] pt-[58px]">
                 <div className="flex flex-col lg:flex-row gap-[60px] lg:gap-[80px] items-start">
                     {/* Left Section - Title */}
                     <div className="flex-1 lg:max-w-[400px]">
@@ -104,7 +103,7 @@ const Testimonials = () => {
                                 <p className="third-description text-white mb-4">
                                     {testimonial.title}
                                 </p>
-                                <p className="text-description text-white">
+                                <p className="text-[16px] leading-[22px] tracking-[0em] text-white">
                                     &quot;{testimonial.quote}&quot;
                                 </p>
                             </motion.div>
