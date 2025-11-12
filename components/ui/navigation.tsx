@@ -33,28 +33,39 @@ const Navigation = () => {
   };
 
   return (
-    <div className="w-full max-w-[1440px] px-4 md:px-[70px] mx-auto">
-      <div className="flex items-center justify-between gap-6 pt-7 md:pt-15 ">
+    <div className="w-full max-w-[1440px] px-4  md:px-[70px] mx-auto">
+      <div className="flex items-center justify-between lg:gap-6 pt-4 md:pt-15 ">
         {/* Mobile layout: Hamburger (left) + Logo (center) */}
         <div className="lg:hidden flex items-center justify-between w-full">
           {/* Logo - Left side */}
           <motion.div
-            whileHover={{ scale: 1.05 }}
             className="shrink-0"
+            whileHover={{
+              rotate: 180
+            }}
+            
           >
             <Image
-              src="/white-logo.svg"
+              src="/footer-gold.svg"
               alt="Equitas IT INC Logo"
-              width={51.9}
-              height={44}
+              width={35}
+              height={35}
               className="w-[full] h-[full] cursor-pointer"
               onClick={() => router.push("/")}
             />
           </motion.div>
+
+          <div>
+            <p 
+            onClick={() => setIsMobileOpen(true)}
+            className="text-description cursor-pointer block lg:hidden">
+              Menu
+            </p>
+          </div>
         </div>
 
         {/* Logo - Left side (not sticky) - Centered vertically with navbar */}
-        <div className="hidden md:block relative z-[60]">
+        <div className="hidden lg:block relative z-[60]">
           <motion.div
             className="shrink-0"
             whileHover={{
@@ -235,7 +246,7 @@ const Navigation = () => {
 
 
         <div>
-          <p className="text-[14px] leading-[10px] tracking-[0em] text-white underline">
+          <p className="text-[14px] lg:block hidden leading-[10px] tracking-[0em] text-white underline">
           Request a Callback
           </p>
         </div>
@@ -243,10 +254,10 @@ const Navigation = () => {
 
       {/* Mobile Full Screen Menu - Moved outside of nav */}
       {isMobileOpen && (
-        <div className="fixed inset-0 z-[9999] flex bg-[#F3F3F3] lg:hidden">
+        <div className="fixed inset-0 z-[9999] flex lg:hidden">
           {/* Overlay */}
           <div
-            className="flex-1 bg-[#F3F3F3] bg-opacity-50"
+            className="flex-1 bg-black bg-opacity-50"
             onClick={() => setIsMobileOpen(false)}
           ></div>
 
@@ -256,16 +267,20 @@ const Navigation = () => {
             animate={{ x: 0 }}
             exit={{ x: "100%" }}
             transition={{ type: "tween", duration: 0.3 }}
-            className="w-full bg-[#F3F3F3] min-h-screen flex flex-col py-4 pt-4 px-4 overflow-y-auto"
+            className="w-full min-h-screen flex flex-col py-4 pt-4 px-4 overflow-y-auto relative"
           >
+ 
+      
+            {/* Dark overlay for better text readability */}
+            <div className="absolute inset-0 bg-black bg-opacity-30 z-[1]"></div>
             {/* Header */}
-            <div className="flex items-center justify-between w-full">
+            <div className="flex items-center justify-between w-full relative" style={{ zIndex: 2 }}>
               <Image
                 src="/white-logo.svg"
                 alt="Equitas IT INC Logo"
-                width={142}
-                height={37.82}
-                className="w-[142px] h-[37.82px] cursor-pointer"
+                width={35}
+                height={35}
+                className=" cursor-pointer"
                 onClick={() => {
                   router.push("/");
                   setIsMobileOpen(false);
@@ -286,74 +301,128 @@ const Navigation = () => {
             </div>
 
             {/* Content Wrapper */}
-            <div className="flex flex-col flex-1 mt-6 pt-[75px]">
+            <div className="flex flex-col flex-1 mt-6 pt-[75px] relative" style={{ zIndex: 2 }}>
               {/* Navigation Menu */}
               <div className="">
                 <ul className="">
-                  <li className="border-b border-neutral-700 -mx-4">
+                  <li className="border-b border-white/20 -mx-4">
                     <Link
                       href="/"
-                      className="block font-medium px-4 py-[15px] text-white text-[28px] leading-none tracking-0 transition-colors"
+                      className="block font-medium px-4 py-[15px] text-white text-[28px] leading-none tracking-0 transition-colors hover:opacity-80"
                       onClick={() => setIsMobileOpen(false)}
                     >
                       Home
                     </Link>
                   </li>
 
-                  <li className="border-b border-neutral-700 -mx-4">
+                  <li className="border-b border-white/20 -mx-4">
+                    <div className="px-4 py-[15px]">
+                      <button
+                        onClick={() => setIsServicesOpen(!isServicesOpen)}
+                        className="flex items-center justify-between w-full font-medium text-white text-[28px] leading-none tracking-0 transition-colors hover:opacity-80"
+                      >
+                        Verticals
+                        <motion.svg 
+                          width="16" 
+                          height="16" 
+                          viewBox="0 0 16 16" 
+                          fill="white" 
+                          xmlns="http://www.w3.org/2000/svg"
+                          animate={{ 
+                            rotate: isServicesOpen ? 180 : 0
+                          }}
+                          transition={{ duration: 0.2 }}
+                        >
+                          <path fillRule="evenodd" clipRule="evenodd" d="M8 8.93934L4.53033 5.46967L3.46967 6.53033L6.58578 9.64645C7.36683 10.4275 8.63316 10.4275 9.41421 9.64645L12.5303 6.53033L11.4697 5.46967L8 8.93934Z" data-mode="fill"></path>
+                        </motion.svg>
+                      </button>
+                      {isServicesOpen && (
+                        <motion.div
+                          initial={{ opacity: 0, height: 0 }}
+                          animate={{ opacity: 1, height: "auto" }}
+                          exit={{ opacity: 0, height: 0 }}
+                          transition={{ duration: 0.3 }}
+                          className="mt-4 space-y-3"
+                        >
+                          <Link
+                            href="/finvastra-advisors"
+                            className="block text-white text-[20px] leading-none tracking-0 transition-colors hover:opacity-80 pl-4"
+                            onClick={() => {
+                              setIsMobileOpen(false);
+                              setIsServicesOpen(false);
+                            }}
+                          >
+                            Finvastra Advisors
+                          </Link>
+                          <Link
+                            href="/finvastra-wealth"
+                            className="block text-white text-[20px] leading-none tracking-0 transition-colors hover:opacity-80 pl-4"
+                            onClick={() => {
+                              setIsMobileOpen(false);
+                              setIsServicesOpen(false);
+                            }}
+                          >
+                            Finvastra Wealth
+                          </Link>
+                          <Link
+                            href="/finvastra-insurance-marketing"
+                            className="block text-white text-[20px] leading-none tracking-0 transition-colors hover:opacity-80 pl-4"
+                            onClick={() => {
+                              setIsMobileOpen(false);
+                              setIsServicesOpen(false);
+                            }}
+                          >
+                            Finvastra Insurance Marketing
+                          </Link>
+                        </motion.div>
+                      )}
+                    </div>
+                  </li>
+
+                  <li className="border-b border-white/20 -mx-4">
                     <Link
-                      href="/automobile"
-                      className="block font-medium px-4 py-[15px] text-white text-[28px] leading-none tracking-0 transition-colors"
+                      href="/company"
+                      className="block font-medium px-4 py-[15px] text-white text-[28px] leading-none tracking-0 transition-colors hover:opacity-80"
                       onClick={() => setIsMobileOpen(false)}
                     >
-                      Automobile
+                      Company
                     </Link>
                   </li>
 
-                  <li className="border-b border-neutral-700 -mx-4">
+                  <li className="border-b border-white/20 -mx-4">
                     <Link
-                      href="/about"
-                      className="block font-medium px-4 py-[15px] text-white text-[28px] leading-none tracking-0 transition-colors"
+                      href="/partner"
+                      className="block font-medium px-4 py-[15px] text-white text-[28px] leading-none tracking-0 transition-colors hover:opacity-80"
                       onClick={() => setIsMobileOpen(false)}
                     >
-                      About
+                      Partner With Us
                     </Link>
                   </li>
 
-                  <li className="border-b border-neutral-700 -mx-4">
+                  <li className="border-b border-white/20 -mx-4">
                     <Link
                       href="/careers"
-                      className="block font-medium px-4 py-[15px] text-white text-[28px] leading-none tracking-0 transition-colors"
+                      className="block font-medium px-4 py-[15px] text-white text-[28px] leading-none tracking-0 transition-colors hover:opacity-80"
                       onClick={() => setIsMobileOpen(false)}
                     >
-                      Careers
+                      Career
                     </Link>
                   </li>
 
-                  <li className="border-b border-neutral-700 -mx-4">
+                  <li className="border-b border-white/20 -mx-4">
                     <Link
-                      href="/blogs"
-                      className="block font-medium px-4 py-[15px] text-white text-[28px] leading-none tracking-0 transition-colors"
+                      href="/support"
+                      className="block font-medium px-4 py-[15px] text-white text-[28px] leading-none tracking-0 transition-colors hover:opacity-80"
                       onClick={() => setIsMobileOpen(false)}
                     >
-                      Blogs
-                    </Link>
-                  </li>
-
-                  <li className="border-b border-neutral-700 -mx-4">
-                    <Link
-                      href="/contact"
-                      className="block font-medium px-4 py-[15px] text-white text-[28px] leading-none tracking-0 transition-colors"
-                      onClick={() => setIsMobileOpen(false)}
-                    >
-                      Contact
+                      Support
                     </Link>
                   </li>
                 </ul>
               </div>
 
               {/* Footer pushed to bottom */}
-              <div className="pt-[25px] space-y-[10px]">
+              {/* <div className="pt-[25px] space-y-[10px]">
                 <div className="rounded-[10px]">
                   <p className="text-gray-400 text-[12px] mb-1 font-medium flex items-center leading-none tracking-0">
                     <span className="w-[6px] h-[6px] bg-blue-400 rounded-full mr-2"></span>
@@ -389,7 +458,7 @@ const Navigation = () => {
                     info@equitasitinc.com
                   </a>
                 </div>
-              </div>
+              </div> */}
             </div>
           </motion.div>
         </div>

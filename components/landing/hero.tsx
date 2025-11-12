@@ -31,7 +31,9 @@ const Hero = () => {
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8 }}
-                        className="flex justify-between items-end w-full"
+                        className="flex lg:flex-row flex-col justify-between 
+                        items-start
+                        lg:items-end w-full gap-[70px]"
                     >
                         <div>
                             <h1 className="heading-style">
@@ -42,7 +44,7 @@ const Hero = () => {
                             </h1>
                         </div>
                         <div>
-                            <p className="text-[54px] leading-[39px] tracking-[0.04em] text-white pb-[15px]">
+                            <p className="text-[54px] leading-[39px] tracking-[-0.04em] text-white pb-[15px]">
                                 25+
                             </p>
                             <p className="text-description max-w-[365px]">

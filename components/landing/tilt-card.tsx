@@ -37,8 +37,8 @@ export const aiFeatures: AiFeature[] = [
 const TiltCard = () => {
     return (
             <div className="
-            w-[350px] h-[345px]
-            border border-[#E8E8E8] relative rounded-[20px] p-[30px] bg-white">
+            w-[308px] md:w-[350px] md:h-[345px] h-[278px]
+            border border-[#E8E8E8] relative rounded-[20px] py-[30px]  px-[20px] bg-white">
                 <motion.div 
                 initial={{ rotate: 7.1 }}
                 whileHover={{ rotate: 0 }}
@@ -48,20 +48,24 @@ const TiltCard = () => {
                   stiffness: 100,
                   damping: 5,
                 }}
-                className="absolute inset-0 flex flex-col items- justify-center rounded-[20px] p-[30px] border border-[#E8E8E8] bg-white gap-[34px]" >
+                className="absolute inset-0 flex flex-col items- justify-center rounded-[20px] 
+                px-[20px] py-[30px]
+                md:px-[30px] border border-[#E8E8E8] bg-white md:gap-[34px] gap-[30px]" >
                   {aiFeatures.map((feature, index) => (
                       <div 
                     
                       key={index}
-                      className="flex flex-row items-start gap-[14px]">
+                      className="flex flex-row items-start md:gap-[14px] gap-[10px]">
                         <div>
-                      <Image src={feature.image} alt={feature.title} width={24} height={24} />
+                      <Image src={feature.image} alt={feature.title} width={24} height={24}
+                      className="w-[21.4px] h-[21.4px] md:w-[24px] md:h-[24px]"
+                      />
                       </div>
                       <div>
-                      <h2 className="text-[20px] leading-[15px] tracking-[0em] navy-blue mb-[15px] font-medium">
+                      <h2 className="md:text-[20px] text-[16px] leading-[12px] md:leading-[15px] tracking-[0em] navy-blue md:mb-[15px] mb-[10px] font-medium">
                         {feature.title}
                       </h2>
-                      <p className="text-[14px] leading-[10px]  text-[#9E9E9E]">
+                      <p className="text-[14px] leading-[10px]  text-[#9E9E9E] tracking-[0em]">
                         {feature.description}
                       </p>
                       </div>

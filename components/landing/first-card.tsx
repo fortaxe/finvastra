@@ -26,8 +26,8 @@ const chartConfig = {
 
 const FirstCard = () => {
     return (
-        <div className="border border-color rounded-[25px]  w-[427px] p-[10px] pb-[30px] h-[447px] bg-[#FAFAFA]">
-            <div className="border border-color rounded-[15px] flex items-center justify-center h-[271px] p-4"> 
+        <div className="border border-color rounded-[20px] md:rounded-[25px]  w-full lg:w-[427px] p-[10px] pb-[20px] md:pb-[30px] h-full md:h-[447px] bg-[#FAFAFA]">
+            <div className="border border-color rounded-[10px] md:rounded-[15px] flex items-center justify-center h-[271px] p-4"> 
                 <ChartContainer config={chartConfig} className="w-full h-full">
                     <LineChart
                         accessibilityLayer
@@ -60,7 +60,7 @@ const FirstCard = () => {
                 </ChartContainer>
             </div>
             <div className="flex flex-col justify-center items-center pt-[20px]">
-                <h3 className="third-heading-style navy-blue max-w-[194px] text-center">25+ Partner Institutions </h3>
+                <h3 className="third-heading-style navy-blue md:max-w-[194px] text-center">25+ Partner Institutions </h3>
                 <p className="text-description !text-black pt-[10px] max-w-[367px] text-center">Partnering with leading NBFCs, fintechs, and institutions to create impactful solutions.</p>
             </div>
         </div>  

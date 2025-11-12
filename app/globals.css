@@ -169,6 +169,14 @@
   color: #fff;
 }
 
+@media (max-width: 1023px) {
+  .heading-style {
+    font-size: 56px;
+    line-height: 55px;
+    letter-spacing: -0.05em;
+  }
+}
+
 .sub-heading-style {
   font-size: 58px;
   line-height: 61px;
@@ -176,11 +184,27 @@
   font-weight: 500;
 }
 
+@media (max-width: 1023px) {
+  .sub-heading-style {
+    font-size: 36px;
+    line-height: 38px;
+    letter-spacing: -0.04em;
+    font-weight: 500;
+  }
+}
+
 .third-heading-style {
-  font-size: 36px;
-  line-height: 36px;
+  font-size: 24px;
+  line-height: 24px;
   letter-spacing: -0.04em;
   font-weight: 500;
+}
+
+@media (min-width: 768px) {
+  .third-heading-style {
+    font-size: 36px;
+    line-height: 36px;
+  }
 }
 
 .text-description {

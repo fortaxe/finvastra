@@ -6,13 +6,13 @@ import ThirdCard from "./third-card";
 
 const OurGlance = () => {
     return (
-        <div className="py-[70px] px-[60px] max-w-[1440px] mx-auto">
+        <div className="md:py-[70px] py-[30px] md:px-[60px] px-4 max-w-[1440px] mx-auto">
             <motion.h2
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
-                className="sub-heading-style mb-[50px] leading-tight text-center"
+                className="sub-heading-style mb-[30px] md:mb-[50px] leading-tight text-center"
             >
                 <span className="navy-blue">Our Impact at a </span>
                 <span className="gold">
@@ -20,7 +20,7 @@ const OurGlance = () => {
                 </span>
             </motion.h2>
 
-            <div className="flex flex-row gap-[20px]">
+            <div className="flex flex-col lg:flex-row gap-[20px]">
                 <FirstCard />
                 <SecondCard />
                 <ThirdCard />

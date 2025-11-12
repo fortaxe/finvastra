@@ -50,20 +50,19 @@ const Testimonials = () => {
     return (
         <div className="w-full relative h-[850px] overflow-hidden">
             {/* Background Image with Blur */}
-            <div className="absolute inset-0 z-0">
+            <div className="absolute inset-0 z-0 ">
                 <Image
                     src="/hero.png" // Placeholder - user will add actual image
                     alt="Background"
                     fill
                     className="object-cover"
-                  
                 />
      
             </div>
 
             {/* Content */}
-            <div className="relative z-10 w-full max-w-[1440px] mx-auto px-4 md:px-[60px] pt-[58px]">
-                <div className="flex flex-col lg:flex-row gap-[60px] lg:gap-[80px] items-start">
+            <div className="relative z-10 w-full max-w-[1440px] mx-auto px-4 md:px-[60px] md:pt-[58px] pt-[30px] ">
+                <div className="flex flex-col lg:flex-row gap-[30px] lg:gap-[80px] md:items-start items-center">
                     {/* Left Section - Title */}
                     <div className="flex-1 lg:max-w-[400px]">
                         <motion.h2
@@ -71,7 +70,7 @@ const Testimonials = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.6 }}
-                            className="sub-heading-style text-white font-medium"
+                            className="sub-heading-style text-white font-medium text-center md:text-left"
                         >
                             <span className="block">Hear it from</span>
                             <span className="block ">Our Clients</span>
@@ -80,7 +79,7 @@ const Testimonials = () => {
 
                     {/* Right Section - Testimonial Cards */}
                     <div 
-                        className="testimonials-scroll flex-1 lg:max-w-[426px] max-h-[887px] overflow-y-auto pr-2 pb-4 space-y-5" 
+                        className="testimonials-scroll flex-1 lg:max-w-[426px] max-h-[887px] overflow-y-auto pr-2 pb-50 md:pb-30 md:space-y-5 space-y-[10px]" 
                         style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
                     >
                         <style jsx>{`
@@ -95,7 +94,7 @@ const Testimonials = () => {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: false, margin: "-50px" }}
                                 transition={{ duration: 0.6, delay: 0.1 }}
-                                className="bg-white/10  rounded-[25px] pt-[25px] pb-[20px] px-[20px] border border-white/20 "
+                                className="bg-white/10 rounded-[20px] md:rounded-[25px] pt-[20px] md:pt-[25px] pb-[20px] px-[10px] md:px-[20px] border border-white/20 "
                             >
                                 <h3 className="text-[16px] leading-[12px] text-white mb-2">
                                     {testimonial.name}

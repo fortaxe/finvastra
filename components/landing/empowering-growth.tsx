@@ -7,8 +7,10 @@ const EmpoweringGrowth = () => {
 
         <div className="relative max-w-[1440px] mx-auto ">
 
-            <DottedBackground>
-                <div className="absolute bottom-[76px] ">
+            <DottedBackground
+            
+            >
+                <div className="hidden xl:block absolute bottom-[76px] ">
                     <svg width="1440" height="272" viewBox="0 0 1440 272" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M0 120C184 68 439 -14.9329 765 149C1079.49 307.145 1365 181 1440 2.99994" stroke="url(#paint0_linear_151_2960)" stroke-dasharray="8 8" />
                         <g filter="url(#filter0_d_151_2960)">
@@ -123,21 +125,15 @@ const EmpoweringGrowth = () => {
                     </svg>
                 </div>
 
-                <div className="absolute left-[191px] top-1/2 -translate-y-1/2">
-                    <TiltCard />
-                </div>
-
-                <div className="absolute right-[119px] top-1/2 -translate-y-1/2 ">
-                <div className="flex flex-row gap-[5px] items-center mb-2">
-                    <p className="third-description text-[#9E9E9E] ">
-                        Empower growth through funding.
-                    </p>
-
-               
+                {/* Text Section */}
+                <div className="flex flex-col items-center text-center px-4 py-[30px] xl:absolute xl:right-[119px] xl:top-1/2 xl:-translate-y-1/2 xl:items-start xl:text-left xl:px-0 xl:py-0">
+                    <div className="flex flex-row gap-[5px] items-center mb-2">
+                        <p className="third-description text-[#9E9E9E] ">
+                            Empower growth through funding.
+                        </p>
                     </div>
                     <h2
-
-                        className="sub-heading-style mb-[50px] leading-tight "
+                        className="sub-heading-style mb-[30px] leading-tight "
                     >
                         <span className="navy-blue">Empowering Growth,</span>
                         <br />
@@ -145,6 +141,11 @@ const EmpoweringGrowth = () => {
                             Shaping Futures.
                         </span>
                     </h2>
+                </div>
+
+                {/* Card Section */}
+                <div className="flex justify-center px-4 pb-8 xl:absolute xl:left-[191px] xl:top-1/2 xl:-translate-y-1/2 xl:px-0 xl:pb-0">
+                    <TiltCard />
                 </div>
 
             </DottedBackground>

@@ -57,8 +57,8 @@ const SecondCard = () => {
     const y = centerY + radius * Math.sin(rad);
 
     return (
-        <div className="border border-color  h-[447px] rounded-[25px] p-[10px]  pb-[20px] flex  flex-col  bg-[#FAFAFA] w-[427px]">
-            <div className="border border-color rounded-[15px] flex items-center justify-center h-[271px] w-full p-2 overflow-visible">
+        <div className="border border-color rounded-[20px] md:rounded-[25px] w-full lg:w-[427px] p-[10px] pb-[20px] md:pb-[30px] h-full md:h-[447px] flex flex-col bg-[#FAFAFA]">
+            <div className="border border-color rounded-[10px] md:rounded-[15px] flex items-center justify-center h-[271px] w-full p-2 overflow-visible">
                 <ChartContainer
                     config={chartConfig}
                     className="mx-auto aspect-square w-full h-full max-h-[230px] max-w-[290px]"
@@ -129,8 +129,8 @@ const SecondCard = () => {
                 </ChartContainer>
             </div>
 
-            <div className="flex flex-col items-center mt-auto">
-                <h3 className="third-heading-style navy-blue text-center ">Pan-India Presence</h3>
+            <div className="flex flex-col items-center mt-auto pt-[20px]">
+                <h3 className="third-heading-style navy-blue md:max-w-[194px] text-center">Pan-India Presence</h3>
                 <p className="text-description !text-black pt-[10px] max-w-[367px] text-center">
                     Partnering with leading NBFCs, fintechs, and institutions to create impactful solutions.
                 </p>
