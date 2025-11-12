@@ -11,10 +11,8 @@ import { landingWhyChoose } from "./landing-why-choose-data";
 export default function Home() {
   return (
     <div>
-
       <Hero />
       <EmpoweringGrowth />
-
       <WhyChoose
         description={landingWhyChoose.description}
         features={landingWhyChoose.features}
