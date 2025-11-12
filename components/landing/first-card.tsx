@@ -1,5 +1,6 @@
 "use client";
 
+import { motion } from "motion/react";
 import { CartesianGrid, Line, LineChart, XAxis } from "recharts";
 import {
   ChartConfig,
@@ -59,10 +60,32 @@ const FirstCard = () => {
                     </LineChart>
                 </ChartContainer>
             </div>
-            <div className="flex flex-col justify-center items-center pt-[20px]">
-                <h3 className="third-heading-style navy-blue md:max-w-[194px] text-center">25+ Partner Institutions </h3>
-                <p className="text-description !text-black pt-[10px] max-w-[367px] text-center">Partnering with leading NBFCs, fintechs, and institutions to create impactful solutions.</p>
-            </div>
+            <motion.div 
+                initial={{ opacity: 0, y: 10, filter: "blur(5px)" }}
+                whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
+                className="flex flex-col justify-center items-center pt-[20px]"
+            >
+                <motion.h3 
+                    initial={{ opacity: 0, y: 5 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, delay: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
+                    className="third-heading-style navy-blue md:max-w-[194px] text-center"
+                >
+                    25+ Partner Institutions 
+                </motion.h3>
+                <motion.p 
+                    initial={{ opacity: 0, y: 5 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, delay: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
+                    className="text-description !text-black pt-[10px] max-w-[367px] text-center"
+                >
+                    Partnering with leading NBFCs, fintechs, and institutions to create impactful solutions.
+                </motion.p>
+            </motion.div>
         </div>  
     )
 }

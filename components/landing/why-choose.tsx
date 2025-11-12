@@ -25,10 +25,10 @@ const WhyChoose = ({ description, features }: WhyChooseProps) => {
                     {/* Left Section - Text Content */}
                     <div className="flex-1 lg:max-w-[500px]">
                         <motion.h2
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
+                            initial={{ opacity: 0, y: 20, filter: "blur(8px)" }}
+                            whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
                             viewport={{ once: true }}
-                            transition={{ duration: 0.6 }}
+                            transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
                             className="sub-heading-style 
                             mb-[15px] md:mb-5 leading-tight text-center md:text-left"
                         >
@@ -38,10 +38,10 @@ const WhyChoose = ({ description, features }: WhyChooseProps) => {
                             </span>
                         </motion.h2>
                         <motion.p
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
+                            initial={{ opacity: 0, y: 20, filter: "blur(8px)" }}
+                            whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
                             viewport={{ once: true }}
-                            transition={{ duration: 0.6, delay: 0.1 }}
+                            transition={{ duration: 0.8, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
                             className="secondary-description text-center md:text-left"
                         >
                             {description}
@@ -54,20 +54,26 @@ const WhyChoose = ({ description, features }: WhyChooseProps) => {
                         {/* Card 1 */}
                      
                         <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
+                            initial={{ opacity: 0, y: 20, filter: "blur(8px)" }}
+                            whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
                             viewport={{ once: true }}
-                            transition={{ duration: 0.6, delay: 0 }}
+                            transition={{ duration: 0.8, delay: 0, ease: [0.25, 0.1, 0.25, 1] }}
                             className="flex flex-col items-center text-center  border-b-[#EFEFEF] "
                         >
-                            <div className="mb-[30px] w-[170px] h-[170.01px] relative">
+                            <motion.div 
+                                initial={{ scale: 0.8, opacity: 0 }}
+                                whileInView={{ scale: 1, opacity: 1 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.6, delay: 0.1, ease: [0.25, 0.1, 0.25, 1] }}
+                                className="mb-[30px] w-[170px] h-[170.01px] relative"
+                            >
                                 <Image
                                     src={features[0].icon}
                                     alt={features[0].title}
                                     fill
                                     className="w-full h-full object-cover"
                                 />
-                            </div>
+                            </motion.div>
                             <p className="text-description !text-black mx-auto">
                                 {features[0].title.split('\n').map((line, i, arr) => (
                                     <span key={i}>
@@ -82,20 +88,26 @@ const WhyChoose = ({ description, features }: WhyChooseProps) => {
                         {/* Card 2 */}
                     
                         <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
+                            initial={{ opacity: 0, y: 20, filter: "blur(8px)" }}
+                            whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
                             viewport={{ once: true }}
-                            transition={{ duration: 0.6, delay: 0.1 }}
+                            transition={{ duration: 0.8, delay: 0.1, ease: [0.25, 0.1, 0.25, 1] }}
                             className="flex flex-col items-center text-center  border-b-[#EFEFEF] mt-[15px]"
                         >
-                            <div className="mb-[30px] w-[170px] h-[170.01px] relative">
+                            <motion.div 
+                                initial={{ scale: 0.8, opacity: 0 }}
+                                whileInView={{ scale: 1, opacity: 1 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.6, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
+                                className="mb-[30px] w-[170px] h-[170.01px] relative"
+                            >
                                 <Image
                                     src={features[1].icon}
                                     alt={features[1].title}
                                     fill
                                     className="w-full h-full object-cover"
                                 />
-                            </div>
+                            </motion.div>
                             <p className="text-description !text-black mx-auto">
                                 {features[1].title.split('\n').map((line, i, arr) => (
                                     <span key={i}>
@@ -108,20 +120,26 @@ const WhyChoose = ({ description, features }: WhyChooseProps) => {
                         {/* Card 3 */}
                    
                         <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
+                            initial={{ opacity: 0, y: 20, filter: "blur(8px)" }}
+                            whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.6, delay: 0.2 }}
                             className="flex flex-col items-center text-center "
                         >
-                            <div className="mb-[30px] w-[170px] h-[170.01px] relative">
+                            <motion.div 
+                                initial={{ scale: 0.8, opacity: 0 }}
+                                whileInView={{ scale: 1, opacity: 1 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.6, delay: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
+                                className="mb-[30px] w-[170px] h-[170.01px] relative"
+                            >
                                 <Image
                                     src={features[2].icon}
                                     alt={features[2].title}
                                     fill
                                     className="w-full h-full object-cover"
                                 />
-                            </div>
+                            </motion.div>
                             <p className="text-description !text-black mx-auto">
                                 {features[2].title.split('\n').map((line, i, arr) => (
                                     <span key={i}>
@@ -135,20 +153,26 @@ const WhyChoose = ({ description, features }: WhyChooseProps) => {
                         {/* Card 4 */}
                   
                         <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
+                            initial={{ opacity: 0, y: 20, filter: "blur(8px)" }}
+                            whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
                             viewport={{ once: true }}
-                            transition={{ duration: 0.6, delay: 0.3 }}
+                            transition={{ duration: 0.8, delay: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
                             className="flex flex-col items-center text-center "
                         >
-                            <div className="mb-[30px] w-[170px] h-[170.01px] relative">
+                            <motion.div 
+                                initial={{ scale: 0.8, opacity: 0 }}
+                                whileInView={{ scale: 1, opacity: 1 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.6, delay: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
+                                className="mb-[30px] w-[170px] h-[170.01px] relative"
+                            >
                                 <Image
                                     src={features[3].icon}
                                     alt={features[3].title}
                                     fill
                                     className="w-full h-full object-cover"
                                 />
-                            </div>
+                            </motion.div>
                             <p className="text-description !text-black mx-auto">
                                 {features[3].title.split('\n').map((line, i, arr) => (
                                     <span key={i}>
@@ -165,17 +189,27 @@ const WhyChoose = ({ description, features }: WhyChooseProps) => {
                         {firstRow.map((feature: WhyChooseFeature, index: number) => (
                             <motion.div
                                 key={index}
+                                initial={{ opacity: 0, y: 20, filter: "blur(8px)" }}
+                                whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.8, delay: index * 0.1, ease: [0.25, 0.1, 0.25, 1] }}
                                 className="flex flex-col items-center text-center md:px-[72px] py-[15px] border-l border-l-[#EFEFEF]"
                             >
                                 {/* Icon */}
-                                <div className="mb-[30px] w-[170px] h-[170.01px] relative">
+                                <motion.div 
+                                    initial={{ scale: 0.8, opacity: 0 }}
+                                    whileInView={{ scale: 1, opacity: 1 }}
+                                    viewport={{ once: true }}
+                                    transition={{ duration: 0.6, delay: index * 0.1 + 0.1, ease: [0.25, 0.1, 0.25, 1] }}
+                                    className="mb-[30px] w-[170px] h-[170.01px] relative"
+                                >
                                     <Image
                                         src={feature.icon}
                                         alt={feature.title}
                                         fill
                                         className="w-full h-full object-cover"
                                     />
-                                </div>
+                                </motion.div>
                                 {/* Text */}
                                 <p className="text-description !text-black mx-auto">
                                     {feature.title.split('\n').map((line, i, arr) => (
@@ -194,11 +228,20 @@ const WhyChoose = ({ description, features }: WhyChooseProps) => {
                         {secondRow.map((feature: WhyChooseFeature, index: number) => (
                             <motion.div
                                 key={index}
-
+                                initial={{ opacity: 0, y: 20, filter: "blur(8px)" }}
+                                whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.8, delay: (index + 2) * 0.1, ease: [0.25, 0.1, 0.25, 1] }}
                                 className="flex flex-col items-center text-center px-[72px]  py-[15px] border-l border-l-[#EFEFEF]  "
                             >
                                 {/* Icon */}
-                                <div className="mb-[30px] w-16 h-16 md:w-[170px] md:h-[170.01px] relative ">
+                                <motion.div 
+                                    initial={{ scale: 0.8, opacity: 0 }}
+                                    whileInView={{ scale: 1, opacity: 1 }}
+                                    viewport={{ once: true }}
+                                    transition={{ duration: 0.6, delay: (index + 2) * 0.1 + 0.1, ease: [0.25, 0.1, 0.25, 1] }}
+                                    className="mb-[30px] w-16 h-16 md:w-[170px] md:h-[170.01px] relative "
+                                >
                                     <Image
                                         src={feature.icon}
                                         alt={feature.title}
@@ -206,7 +249,7 @@ const WhyChoose = ({ description, features }: WhyChooseProps) => {
 
                                         className="w-full h-full object-cover"
                                     />
-                                </div>
+                                </motion.div>
                                 {/* Text */}
                                 <p className="text-description !text-black mx-auto">
                                     {feature.title.split('\n').map((line, i, arr) => (

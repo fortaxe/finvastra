@@ -1,3 +1,6 @@
+"use client";
+
+import { motion } from "motion/react";
 import TiltCard from "./tilt-card";
 import DottedBackground from "./dotted-bg";
 
@@ -126,13 +129,29 @@ const EmpoweringGrowth = () => {
                 </div>
 
                 {/* Text Section */}
-                <div className="flex flex-col items-center text-center px-4 py-[30px] xl:absolute xl:right-[119px] xl:top-1/2 xl:-translate-y-1/2 xl:items-start xl:text-left xl:px-0 xl:py-0">
-                    <div className="flex flex-row gap-[5px] items-center mb-2">
+                <motion.div 
+                    initial={{ opacity: 0, filter: "blur(10px)", y: 30 }}
+                    whileInView={{ opacity: 1, filter: "blur(0px)", y: 0 }}
+                    viewport={{ once: true, margin: "-100px" }}
+                    transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
+                    className="flex flex-col items-center text-center px-4 py-[30px] xl:absolute xl:right-[119px] xl:top-1/2 xl:-translate-y-1/2 xl:items-start xl:text-left xl:px-0 xl:py-0"
+                >
+                    <motion.div 
+                        initial={{ opacity: 0, y: 10 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6, delay: 0.1, ease: [0.25, 0.1, 0.25, 1] }}
+                        className="flex flex-row gap-[5px] items-center mb-2"
+                    >
                         <p className="third-description text-[#9E9E9E] ">
                             Empower growth through funding.
                         </p>
-                    </div>
-                    <h2
+                    </motion.div>
+                    <motion.h2
+                        initial={{ opacity: 0, filter: "blur(8px)" }}
+                        whileInView={{ opacity: 1, filter: "blur(0px)" }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.8, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
                         className="sub-heading-style mb-[30px] leading-tight "
                     >
                         <span className="navy-blue">Empowering Growth,</span>
@@ -140,13 +159,19 @@ const EmpoweringGrowth = () => {
                         <span className="gold">
                             Shaping Futures.
                         </span>
-                    </h2>
-                </div>
+                    </motion.h2>
+                </motion.div>
 
                 {/* Card Section */}
-                <div className="flex justify-center px-4 pb-8 xl:absolute xl:left-[191px] xl:top-1/2 xl:-translate-y-1/2 xl:px-0 xl:pb-0">
+                <motion.div 
+                    initial={{ opacity: 0, scale: 0.9, filter: "blur(5px)" }}
+                    whileInView={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
+                    viewport={{ once: true, margin: "-100px" }}
+                    transition={{ duration: 0.8, delay: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
+                    className="flex justify-center px-4 pb-8 xl:absolute xl:left-[191px] xl:top-1/2 xl:-translate-y-1/2 xl:px-0 xl:pb-0"
+                >
                     <TiltCard />
-                </div>
+                </motion.div>
 
             </DottedBackground>
         </div>

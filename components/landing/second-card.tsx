@@ -7,8 +7,9 @@ import {
   ChartTooltip,
   ChartTooltipContent,
 } from "@/components/ui/chart";
-import { useState, useEffect, useMemo } from "react";
-import { useSpring, useMotionValueEvent } from "motion/react";
+import { useState, useEffect, useMemo, useRef } from "react";
+import { useSpring, useMotionValueEvent, motion, useInView } from "motion/react";
+
 
 const chartData = [
   { region: "North", presence: 28 },
@@ -27,19 +28,21 @@ const chartConfig = {
 } satisfies ChartConfig;
 
 const SecondCard = () => {
-    const [currentAngle, setCurrentAngle] = useState(360);
-    const [hoveredValue, setHoveredValue] = useState(chartData[chartData.length - 1].presence);
+    const [currentAngle, setCurrentAngle] = useState(0);
+    const [hoveredValue, setHoveredValue] = useState(0);
     const [hasAnimated, setHasAnimated] = useState(false);
-    const springAngle = useSpring(360, { damping: 30, stiffness: 100 });
-    const springValue = useSpring(chartData[chartData.length - 1].presence, { damping: 30, stiffness: 100 });
+    const springAngle = useSpring(0, { damping: 30, stiffness: 100 });
+    const springValue = useSpring(0, { damping: 30, stiffness: 100 });
     const clipPathId = useMemo(() => `clipped-sector-second-${Math.random().toString(36).substr(2, 9)}`, []);
+    const ref = useRef(null);
+    const isInView = useInView(ref, { once: true, margin: "-100px" });
 
     useMotionValueEvent(springAngle, "change", setCurrentAngle);
     useMotionValueEvent(springValue, "change", setHoveredValue);
 
     useEffect(() => {
-        if (!hasAnimated) {
-            // Start animation immediately - show full chart after a brief delay
+        if (!hasAnimated && isInView) {
+            // Start animation when section comes into view
             const timer = setTimeout(() => {
                 springAngle.set(360);
                 springValue.set(chartData[chartData.length - 1].presence);
@@ -47,7 +50,7 @@ const SecondCard = () => {
             }, 50);
             return () => clearTimeout(timer);
         }
-    }, [hasAnimated, springAngle, springValue]);
+    }, [hasAnimated, isInView, springAngle, springValue]);
 
     const centerX = 125;
     const centerY = 125;
@@ -57,7 +60,7 @@ const SecondCard = () => {
     const y = centerY + radius * Math.sin(rad);
 
     return (
-        <div className="border border-color rounded-[20px] md:rounded-[25px] w-full lg:w-[427px] p-[10px] pb-[20px] md:pb-[30px] h-full md:h-[447px] flex flex-col bg-[#FAFAFA]">
+        <div ref={ref} className="border border-color rounded-[20px] md:rounded-[25px] w-full lg:w-[427px] p-[10px] pb-[20px] md:pb-[30px] h-full md:h-[447px] flex flex-col bg-[#FAFAFA]">
             <div className="border border-color rounded-[10px] md:rounded-[15px] flex items-center justify-center h-[271px] w-full p-2 overflow-visible">
                 <ChartContainer
                     config={chartConfig}
@@ -129,12 +132,32 @@ const SecondCard = () => {
                 </ChartContainer>
             </div>
 
-            <div className="flex flex-col items-center mt-auto pt-[20px]">
-                <h3 className="third-heading-style navy-blue md:max-w-[194px] text-center">Pan-India Presence</h3>
-                <p className="text-description !text-black pt-[10px] max-w-[367px] text-center">
+            <motion.div 
+                initial={{ opacity: 0, y: 10, filter: "blur(5px)" }}
+                whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
+                className="flex flex-col items-center mt-auto pt-[20px]"
+            >
+                <motion.h3 
+                    initial={{ opacity: 0, y: 5 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, delay: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
+                    className="third-heading-style navy-blue md:max-w-[194px] text-center"
+                >
+                    Pan-India Presence
+                </motion.h3>
+                <motion.p 
+                    initial={{ opacity: 0, y: 5 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, delay: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
+                    className="text-description !text-black pt-[10px] max-w-[367px] text-center"
+                >
                     Partnering with leading NBFCs, fintechs, and institutions to create impactful solutions.
-                </p>
-            </div>
+                </motion.p>
+            </motion.div>
         </div>
     )
 }

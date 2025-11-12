@@ -66,10 +66,10 @@ const Testimonials = () => {
                     {/* Left Section - Title */}
                     <div className="flex-1 lg:max-w-[400px]">
                         <motion.h2
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
+                            initial={{ opacity: 0, y: 20, filter: "blur(10px)" }}
+                            whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
                             viewport={{ once: true }}
-                            transition={{ duration: 0.6 }}
+                            transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
                             className="sub-heading-style text-white font-medium text-center md:text-left"
                         >
                             <span className="block">Hear it from</span>
@@ -90,21 +90,39 @@ const Testimonials = () => {
                         {testimonials.map((testimonial, index) => (
                             <motion.div
                                 key={index}
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: false, margin: "-50px" }}
-                                transition={{ duration: 0.6, delay: 0.1 }}
+                                initial={{ opacity: 0, y: 20, filter: "blur(8px)" }}
+                                whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                                viewport={{ once: true, margin: "-50px" }}
+                                transition={{ duration: 0.8, delay: index * 0.05, ease: [0.25, 0.1, 0.25, 1] }}
                                 className="bg-white/10 rounded-[20px] md:rounded-[25px] pt-[20px] md:pt-[25px] pb-[20px] px-[10px] md:px-[20px] border border-white/20 "
                             >
-                                <h3 className="text-[16px] leading-[12px] text-white mb-2">
+                                <motion.h3 
+                                    initial={{ opacity: 0, x: -10 }}
+                                    whileInView={{ opacity: 1, x: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ duration: 0.6, delay: index * 0.05 + 0.1, ease: [0.25, 0.1, 0.25, 1] }}
+                                    className="text-[16px] leading-[12px] text-white mb-2"
+                                >
                                     {testimonial.name}
-                                </h3>
-                                <p className="third-description text-white mb-[15px]">
+                                </motion.h3>
+                                <motion.p 
+                                    initial={{ opacity: 0, x: -10 }}
+                                    whileInView={{ opacity: 1, x: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ duration: 0.6, delay: index * 0.05 + 0.15, ease: [0.25, 0.1, 0.25, 1] }}
+                                    className="third-description text-white mb-[15px]"
+                                >
                                     {testimonial.title}
-                                </p>
-                                <p className="text-[16px] leading-[22px] tracking-[0em] text-white">
+                                </motion.p>
+                                <motion.p 
+                                    initial={{ opacity: 0 }}
+                                    whileInView={{ opacity: 1 }}
+                                    viewport={{ once: true }}
+                                    transition={{ duration: 0.6, delay: index * 0.05 + 0.2, ease: [0.25, 0.1, 0.25, 1] }}
+                                    className="text-[16px] leading-[22px] tracking-[0em] text-white"
+                                >
                                         {testimonial.quote}&quot;
-                                </p>
+                                </motion.p>
                             </motion.div>
                         ))}
                     </div>
