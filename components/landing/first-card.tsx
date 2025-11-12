@@ -20,7 +20,7 @@ const chartData = [
 const chartConfig = {
   partners: {
     label: "Partners",
-    color: "var(--chart-2)",
+    color: "#DBB25A",
   },
 } satisfies ChartConfig;
 

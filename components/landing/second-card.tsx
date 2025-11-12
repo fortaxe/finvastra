@@ -22,7 +22,7 @@ const chartData = [
 const chartConfig = {
   presence: {
     label: "Presence",
-    color: "#FCA070",
+    color: "#DBB25A",
   },
 } satisfies ChartConfig;
 
