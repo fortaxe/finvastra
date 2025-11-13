@@ -3,7 +3,7 @@ import Hero from "@/components/landing/hero";
 import WhyChoose from "@/components/landing/why-choose";
 import Testimonials from "@/components/landing/testimonials";
 import GetInTouch from "@/components/ui/get-in-touch";
-import Footer from "@/components/landing/footer";
+
 import OurGlance from "@/components/landing/our-glance";
 import EmpoweringGrowth from "@/components/landing/empowering-growth";
 import { landingWhyChoose } from "./landing-why-choose-data";

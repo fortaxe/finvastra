@@ -244,3 +244,52 @@
 .scrollbar-hide::-webkit-scrollbar {
   display: none;  /* Chrome, Safari and Opera */
 }
+
+/* Custom Cursor Styles */
+.custom-cursor,
+.custom-cursor-tail {
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0;
+  transform: translate(-50%, -50%);
+  will-change: transform, width, height;
+}
+
+.custom-cursor {
+  border-radius: 50px;
+  width: 2px;
+  height: 2px;
+  border: solid 1px #fff;
+  mix-blend-mode: difference;
+  top: 0;
+  left: 0;
+}
+
+.custom-cursor-tail {
+  mix-blend-mode: difference;
+  border-radius: 50px;
+  width: 15px;
+  height: 15px;
+  background-color: white;
+  border: solid 1px #fff;
+  top: 0;
+  left: 0;
+}
+
+/* Hide default cursor on interactive elements */
+* {
+  cursor: none !important;
+}
+
+/* Show default cursor on mobile/touch devices */
+@media (hover: none) and (pointer: coarse) {
+  .custom-cursor,
+  .custom-cursor-tail {
+    display: none;
+  }
+  
+  * {
+    cursor: auto !important;
+  }
+}

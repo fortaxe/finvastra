@@ -144,7 +144,7 @@ const SecondCard = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6, delay: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
-                    className="third-heading-style navy-blue md:max-w-[194px] text-center"
+                    className="third-heading-style navy-blue text-center"
                 >
                     Pan-India Presence
                 </motion.h3>

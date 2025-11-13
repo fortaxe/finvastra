@@ -78,7 +78,7 @@ const ThirdCard = () => {
             </div>
 
             <div className="flex flex-col justify-center items-center mt-auto pt-[20px]">
-                <h3 className="third-heading-style navy-blue md:max-w-[194px] text-center">
+                <h3 className="third-heading-style navy-blue text-center">
                     ₹1000 Cr+ Debt Structured
                 </h3>
                 <p className="text-description !text-black pt-[10px] max-w-[367px] text-center">
