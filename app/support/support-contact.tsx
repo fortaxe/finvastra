@@ -28,20 +28,23 @@ export default function SupportContact() {
   };
 
   return (
-    <section className="relative bg-white py-[70px]">
+    <section className="relative bg-white md:py-[70px] py-[30px]">
       <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-[60px] w-full">
-        <div className="flex flex-row gap-[120px] items-start ">
+        <div className="flex flex-col lg:flex-row gap-[30px] lg:gap-[120px] items-start">
           {/* Left Side - Heading */}
           <motion.div
-            
+            initial={{ opacity: 0, y: 30, filter: "blur(8px)" }}
+            whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+            transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
+            viewport={{ once: true }}
             className=""
           >
             <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, y: 20, filter: "blur(8px)" }}
+              whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="sub-heading-style  leading-tight"
+              transition={{ duration: 0.8, delay: 0.1, ease: [0.25, 0.1, 0.25, 1] }}
+              className="sub-heading-style  leading-tight text-center md:text-left"
             >
               <span className="navy-blue">Let's Start a</span>
               <br />
@@ -49,23 +52,29 @@ export default function SupportContact() {
                 Conversation
               </span>
             </motion.h2>
-            <p className="secondary-description pt-5">
+            <motion.p 
+              initial={{ opacity: 0, y: 10, filter: "blur(5px)" }}
+              whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
+              className="secondary-description md:pt-5 pt-[15px] text-center md:text-left"
+            >
               Reach out to explore strategic collaboration, debt opportunities, or funding partnerships.
-            </p>
+            </motion.p>
           </motion.div>
 
           {/* Right Side - Contact Form */}
           <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
+            initial={{ opacity: 0, y: 30, filter: "blur(8px)" }}
+            whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+            transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
             viewport={{ once: true }}
-            className="bg-transparent p-[30px] border border-color rounded-[25px]"
+            className="bg-transparent p-5 md:p-[30px] border border-color md:rounded-[25px] rounded-[20px] w-full lg:flex-1"
           >
-            <form onSubmit={handleSubmit} className="space-y-5 w-full">
+            <form onSubmit={handleSubmit} className="md:space-y-5 space-y-[10px] w-full">
               {/* Name and Company Row */}
-              <div className="flex  gap-5">
-                <div className="min-w-[315px] ">
+              <div className="flex flex-col md:flex-row md:gap-5 gap-[10px]">
+                <div className="w-full md:min-w-[315px]">
                   <label htmlFor="name" className="block text-[16px] leading-[14px] tracking-[0em] text-black mb-[10px]">
                     Name*
                   </label>
@@ -78,7 +87,7 @@ export default function SupportContact() {
                     className="w-full px-4 h-[48px] bg-[#FAFAFA] border border-color rounded-full text-black placeholder-gray-400 focus:outline-none focus:border-white/30"
                   />
                 </div>
-                <div className="min-w-[315px] ">
+                <div className="w-full md:min-w-[315px]">
                   <label htmlFor="company" className="block text-[16px] leading-[14px] tracking-[0em] text-black mb-[10px]">
                     Company
                   </label>
@@ -94,8 +103,8 @@ export default function SupportContact() {
               </div>
 
               {/* Email and Phone Row */}
-              <div className="flex flex-wrap gap-5">
-                <div className="min-w-[315px] ">
+              <div className="flex flex-col md:flex-row md:gap-5 gap-[10px]">
+                <div className="w-full md:min-w-[315px]">
                   <label htmlFor="email" className="block text-[16px] leading-[14px] tracking-[0em] text-black mb-[10px]">
                     Email*
                   </label>
@@ -108,7 +117,7 @@ export default function SupportContact() {
                     className="w-full px-4 h-[48px] bg-[#FAFAFA] border border-color rounded-full text-black placeholder-gray-400 focus:outline-none focus:border-white/30"
                   />
                 </div>
-                <div className="min-w-[315px] ">
+                <div className="w-full md:min-w-[315px]">
                   <label htmlFor="phone" className="block text-[16px] leading-[14px] tracking-[0em] text-black mb-[10px]">
                     Phone*
                   </label>
@@ -135,13 +144,13 @@ export default function SupportContact() {
                   value={formData.message}
                   onChange={handleInputChange}
                   rows={4}
-                  className="w-full px-4 pt-3 h-[148px] bg-[#FAFAFA] border border-color rounded-[25px] text-black placeholder-gray-400 focus:outline-none focus:border-white/30 resize-none"
+                  className="w-full px-4 pt-3 h-[148px] bg-[#FAFAFA] border border-color md:rounded-[25px] rounded-[20px] text-black placeholder-gray-400 focus:outline-none focus:border-white/30 resize-none"
                   placeholder=""
                 />
               </div>
 
               {/* Learn More Button */}
-              <div className="flex ">
+              <div className="flex justify-end md:justify-start">
                 <NavyBlueButton
                   name="Request a Callback"
                   onClick={() => console.log("Send Message")}

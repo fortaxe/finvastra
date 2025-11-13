@@ -5,11 +5,11 @@ import Image from "next/image";
 
 const PartnerContent = () => {
     return (
-        <section className="w-full  py-[70px]">
+        <section className="w-full  md:py-[70px] py-[30px]">
             <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-[60px]">
-                <div className="flex flex-col lg:flex-row gap-[60px] items-center">
+                <div className="flex flex-col lg:flex-row md:gap-[60px] gap-[30px] items-center">
                     {/* Left Column - Image */}
-                    <div className="w-1/2">
+                    <div className="md:w-1/2 w-full">
                         <motion.div
                             initial={{ opacity: 0, x: -50 }}
                             whileInView={{ opacity: 1, x: 0 }}
@@ -22,33 +22,33 @@ const PartnerContent = () => {
                                 alt="Partnership handshake"
                                 width={649}
                                 height={434}
-                                className="w-full h-[434px] rounded-[25px] object-cover"
+                                className="w-full h-auto md:h-[434px] rounded-[20px] md:rounded-[25px] object-cover"
                             />
                         </motion.div>
                     </div>
 
                     {/* Right Column - Content */}
-                    <div className="w-1/2">
+                    <div className="md:w-1/2 w-full">
                         <motion.div
                             initial={{ opacity: 0, x: 50 }}
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.8 }}
-                            className="bg-[#FAFAFA] rounded-[25px] p-[30px] border border-color"
+                            className="bg-[#FAFAFA] md:rounded-[25px] rounded-[20px] p-[15px] md:p-[30px] border border-color"
                         >
                             {/* Title */}
-                            <h2 className="sub-heading-style mb-[20px]">
+                            <h2 className="sub-heading-style md:mb-[20px] mb-[10px]">
                                 <span className="navy-blue">Partner With</span>{" "}
                                 <span className="text-[#DBB25A]">Finvastra</span>
                             </h2>
 
                             {/* Description */}
-                            <p className="secondary-description mb-[50px] max-w-[516px]">
+                            <p className="secondary-description md:mb-[50px] mb-[30px] max-w-[516px]">
                                 Whether you're an NBFC, fintech, or institution seeking growth capital or strategic alliances — Finvastra offers end-to-end partnership solutions.
                             </p>
 
                             {/* Contact Information */}
-                            <div className="space-y-[30px]">
+                            <div className="md:space-y-[30px] space-y-[15px]">
                                 {/* Phone */}
                                 <div>
                                     <p className="text-[16px] leading-[12px] text-[#9E9E9E] mb-[15px]">

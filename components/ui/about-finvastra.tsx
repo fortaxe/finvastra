@@ -10,7 +10,7 @@ interface AboutFinvastraProps {
 const AboutFinvastra = ({ backgroundImage = "/placeholder.jpg" }: AboutFinvastraProps) => {
   return (
     <section className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-[60px] ">
-      <div className="relative rounded-[25px] overflow-hidden h-[641px]">
+      <div className="relative md:rounded-[25px] rounded-[20px] overflow-hidden h-[641px]">
         {/* Background Image */}
         {backgroundImage && (
           <div className="absolute inset-0 z-0">
@@ -35,7 +35,7 @@ const AboutFinvastra = ({ backgroundImage = "/placeholder.jpg" }: AboutFinvastra
             className="text-center max-w-[800px]"
           >
             {/* Headline */}
-            <h2 className="sub-heading-style text-white mb-[20px]">
+            <h2 className="sub-heading-style text-white md:mb-[20px] mb-[10px]">
               Weaving Wealth,
               <br />
               Securing Futures

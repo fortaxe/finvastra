@@ -1,6 +1,6 @@
 import InsuranceHero from "./insurance-hero";
 import InsuranceFeatures from "./features";
-import WhyChoose from "@/components/landing/why-choose";
+import DivisionWhyChoose from "@/components/ui/division-why-choose";
 import GetInTouch from "@/components/ui/get-in-touch";
 import { insuranceWhyChoose } from "./insurance-why-choose-data";
 
@@ -16,7 +16,7 @@ const InsuranceMarketingPage = () => {
             /> */}
             <InsuranceFeatures />
       
-                <WhyChoose 
+                <DivisionWhyChoose 
                     description={insuranceWhyChoose.description}
                     features={insuranceWhyChoose.features}
                 />  

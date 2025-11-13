@@ -128,7 +128,7 @@ const JobApplication = () => {
   const currentJob = jobs[selectedJob];
 
   return (
-    <section className="pt-[70px] bg-white">
+    <section className="md:pt-[70px] pt-[30px] bg-white">
       <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-[60px]">
         {/* Header */}
         <motion.div
@@ -136,7 +136,7 @@ const JobApplication = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-[50px]"
+          className="text-center md:mb-[50px] mb-[30px]"
         >
           <h2 className="sub-heading-style">
             <span className="navy-blue">Be Part of </span>
@@ -145,7 +145,7 @@ const JobApplication = () => {
         </motion.div>
 
         {/* Job Category Navigation */}
-        <div className="flex flex-row flex-nowrap overflow-x-auto gap-[10px] mb-[15px] justify-start scrollbar-hide">
+        <div className="flex flex-row flex-nowrap overflow-x-auto md:gap-[10px] gap-[5px] mb-[15px] justify-start scrollbar-hide">
           {Object.values(jobs).map((job) => (
             <button
               key={job.id}
@@ -167,11 +167,11 @@ const JobApplication = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className=" mx-auto mb-[60px] space-y-[20px] border border-color rounded-[25px] px-[30px] pt-[30px] pb-[30px]"
+          className=" mx-auto md:mb-[70px] mb-[30px] space-y-[20px] border border-color md:rounded-[25px] rounded-[20px] p-5 md:p-[30px] "
         >
             {/* Job Title */}
             <div>
-              <h3 className="text-[24px] leading-[24px] font-medium tracking-[0em] text-black mb-[20px]">
+              <h3 className="md:text-[24px] text-[20px] leading-[24px] font-medium tracking-[0em] text-black md:mb-[20px] mb-[10px]">
                 {currentJob.title}
               </h3>
 
@@ -237,7 +237,7 @@ const JobApplication = () => {
                     <path fillRule="evenodd" clipRule="evenodd" d="M10.166 9.88297V10.55H11.5V9.88297V5.16701C11.5 4.79862 11.2014 4.49999 10.833 4.49999H6.11703H5.45002V5.83402H6.11703H9.22266L4.97165 10.085L4.5 10.5567L5.4433 11.5L5.91496 11.0283L10.166 6.77731V9.88297Z" data-mode="fill"></path>
                   </motion.svg>
               </h4>
-              <div className=" flex flex-row gap-[10px]">
+              <div className=" flex flex-wrap gap-[10px]">
                 <a
                   href="mailto:careers@finvastra.com"
                   className="secondary-description underline flex flex-row items-center gap-[3px]"

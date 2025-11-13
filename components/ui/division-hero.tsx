@@ -34,22 +34,30 @@ const DivisionHero = ({ title, description, tags, maxWidth = "899px" }: Division
             <div className="relative z-10 flex items-end justify-start min-h-screen pb-[178px]">
                 <div className="w-full px-4 sm:px-6 lg:px-15 max-w-[1440px] mx-auto">
                     <motion.div
-                        initial={{ opacity: 0, y: 30 }}
+                        initial={{ opacity: 0, y: 50 }}
                         animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8 }}
-                        className="flex justify-between  items-end w-full"
+                        transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
+                        className="flex lg:flex-row flex-col justify-between 
+                        items-start
+                        lg:items-end w-full gap-[70px]"
                     >
-                        <div>
+                        <motion.div
+                            initial={{ opacity: 0, filter: "blur(20px)" }}
+                            animate={{ opacity: 1, filter: "blur(0px)" }}
+                            transition={{ duration: 0.8, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
+                        >
                             <h1 className="heading-style">
                                 {title}
                             </h1>
-                        </div>
+                        </motion.div>
                         {description && (
-                            <div>
+                            <motion.div
+                  
+                            >
                                 <p className="text-description max-w-[365px]">
                                     {description}
                                 </p>
-                            </div>
+                            </motion.div>
                         )}
                     </motion.div>
                 </div>

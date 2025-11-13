@@ -1,4 +1,4 @@
-import { WhyChooseFeature } from "@/components/landing/why-choose";
+import { WhyChooseFeature } from "@/components/ui/division-why-choose";
 
 export const insuranceWhyChoose = {
   description: "At Finvastra, financial growth is not just about capital - it's about collaboration, clarity and compliance. We bridge traditional lending frameworks with new-age fintech agility, enabling institutions to grow faster, safer and smarter.",

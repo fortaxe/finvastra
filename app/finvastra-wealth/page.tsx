@@ -1,6 +1,6 @@
 import WealthHero from "./wealth-hero";
 import WealthFeatures from "./features";
-import WhyChoose from "@/components/landing/why-choose";
+import DivisionWhyChoose from "@/components/ui/division-why-choose";
 import GetInTouch from "@/components/ui/get-in-touch";
 import { wealthWhyChoose } from "./wealth-why-choose-data";
 
@@ -16,7 +16,7 @@ const WealthPage = () => {
             /> */}
             <WealthFeatures />
   
-                <WhyChoose 
+                <DivisionWhyChoose 
                     description={wealthWhyChoose.description}
                     features={wealthWhyChoose.features}
                 />

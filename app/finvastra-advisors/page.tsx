@@ -1,6 +1,6 @@
 import AdvisorsHero from "./advisors-hero";
 import AdvisorsFeatures from "./features";
-import WhyChoose from "@/components/landing/why-choose";
+import DivisionWhyChoose from "@/components/ui/division-why-choose";
 import GetInTouch from "@/components/ui/get-in-touch";
 import { advisorsWhyChoose } from "./advisors-why-choose-data";
 
@@ -16,7 +16,7 @@ export default function AdvisorsPage() {
             /> */}
             <AdvisorsFeatures />
       
-                <WhyChoose 
+                <DivisionWhyChoose 
                     description={advisorsWhyChoose.description}
                     features={advisorsWhyChoose.features}
                 />      

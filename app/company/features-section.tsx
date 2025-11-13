@@ -51,7 +51,7 @@ const FeatureSection = () => {
   ];
 
   return (
-    <section className=" py-[70px]">
+    <section className=" md:py-[70px] py-[30px]">
       <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-[60px]">
         {/* Header */}
         <motion.div
@@ -59,7 +59,7 @@ const FeatureSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-[50px]"
+          className="text-center md:mb-[50px] mb-[30px]"
         >
           <h2 className="sub-heading-style">
             <span className="navy-blue">Core </span>
@@ -90,7 +90,7 @@ const FeatureSection = () => {
                 className=""
               />
               {/* Feature Title */}
-              <h3 className="text-[24px] leading-[24px] navy-blue text-center font-medium mb-[10px] mx-auto mt-5">
+              <h3 className="text-[24px] leading-[24px] navy-blue text-center font-medium mb-[10px] mx-auto md:mt-5">
                 {feature.line1}
                 <br />
                 {feature.line2 && <span>{feature.line2} </span>}

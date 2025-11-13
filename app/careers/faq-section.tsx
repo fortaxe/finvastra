@@ -48,9 +48,9 @@ const FAQSection = () => {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8 }}
       viewport={{ once: true }}
-      className="max-w-[750px] mx-auto my-[70px] "
+      className="max-w-[750px] mx-auto md:my-[70px] my-[30px] px-4 sm:px-6 lg:px-[60px]"
     >
-      <h2 className="sub-heading-style mb-[50px] text-center">
+      <h2 className="sub-heading-style md:mb-[50px] mb-[30px] text-center">
         <span className="navy-blue">Frequently Asked </span>
         <span className="gold">Questions</span>
       </h2>
