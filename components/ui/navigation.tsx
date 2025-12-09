@@ -246,9 +246,12 @@ const Navigation = () => {
 
 
         <div>
-          <p className="text-[14px] lg:block hidden leading-[10px] tracking-[0em] text-white underline">
-          Request a Callback
-          </p>
+          <Link 
+            href="/support" 
+            className="text-[14px] lg:block hidden leading-[10px] tracking-[0em] text-white underline hover:opacity-70 transition-opacity"
+          >
+            Request a Callback
+          </Link>
         </div>
       </div>
 
