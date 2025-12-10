@@ -5,6 +5,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Footer from "@/components/landing/footer";
 import WhatsAppButton from "@/components/ui/whatsapp-button";
+import AnalyticsScripts from "@/components/ui/analytics-scripts";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -34,6 +35,16 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        {/* Google Tag Manager (noscript) */}
+        <noscript>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-NVNXZZ6F"
+            height="0"
+            width="0"
+            style={{ display: "none", visibility: "hidden" }}
+          />
+        </noscript>
+        <AnalyticsScripts />
         {children}
         <Footer />
         <WhatsAppButton />

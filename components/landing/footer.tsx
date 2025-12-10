@@ -2,6 +2,7 @@
 import { motion } from "motion/react";
 import Link from "next/link";
 import Image from "next/image";
+import { Facebook } from "lucide-react";
 
 const footerIcons = ["icons/footer/1.svg", "icons/footer/2.svg", "icons/footer/3.svg", "icons/footer/4.svg"]
 
@@ -39,19 +40,73 @@ export default function Footer() {
             </motion.p>
 
             <div className="flex flex-row gap-[6px]">
-              {footerIcons.map((icon, index: number) => (
-                <motion.div 
-                  key={index}
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: 0.2 + index * 0.05, ease: [0.25, 0.1, 0.25, 1] }}
-                  whileHover={{ scale: 1.1 }}
-                  className="w-[32px] h-[32px] border border-color rounded-full flex items-center justify-center bg-[#FAFAFA]"
-                >
-                  <Image key={index} src={icon} alt="Footer Icon" width={16} height={16} />
-                </motion.div>
-              ))}
+            
+            <motion.a
+                href="https://www.facebook.com/finvastra"
+                target="_blank"
+                rel="noopener noreferrer"
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
+                whileHover={{ scale: 1.1 }}
+                className="w-[32px] h-[32px] border border-color rounded-full flex items-center justify-center bg-[#FAFAFA]"
+              >
+                <Facebook className="w-[16px] h-[16px] text-[#9E9E9E]" />
+              </motion.a>
+              <motion.a
+                href="https://x.com/finvastra"
+                target="_blank"
+                rel="noopener noreferrer"
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
+                whileHover={{ scale: 1.1 }}
+                className="w-[32px] h-[32px] border border-color rounded-full flex items-center justify-center bg-[#FAFAFA]"
+              >
+                <Image src="/icons/footer/1.svg" alt="Facebook" width={16} height={16} />
+              </motion.a>
+              <motion.a
+                href="https://www.instagram.com/finvastra/"
+                target="_blank"
+                rel="noopener noreferrer"
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.25, ease: [0.25, 0.1, 0.25, 1] }}
+                whileHover={{ scale: 1.1 }}
+                className="w-[32px] h-[32px] border border-color rounded-full flex items-center justify-center bg-[#FAFAFA]"
+              >
+                <Image src="/icons/footer/2.svg" alt="YouTube" width={16} height={16} />
+              </motion.a>
+              <motion.a
+                href="https://www.youtube.com/@FinVastra"
+                target="_blank"
+                rel="noopener noreferrer"
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
+                whileHover={{ scale: 1.1 }}
+                className="w-[32px] h-[32px] border border-color rounded-full flex items-center justify-center bg-[#FAFAFA]"
+              >
+                <Image src="/icons/footer/3.svg" alt="Instagram" width={16} height={16} />
+              </motion.a>
+              <motion.a
+                href="https://www.linkedin.com/company/finvastra/?viewAsMember=true"
+                target="_blank"
+                rel="noopener noreferrer"
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.35, ease: [0.25, 0.1, 0.25, 1] }}
+                whileHover={{ scale: 1.1 }}
+                className="w-[32px] h-[32px] border border-color rounded-full flex items-center justify-center bg-[#FAFAFA]"
+              >
+                <Image src="/icons/footer/4.svg" alt="LinkedIn" width={16} height={16} />
+              </motion.a>
+          
             </div>
           </motion.div>
 
