@@ -127,10 +127,10 @@ export default function Footer() {
             >
               <p className="text-black mb-5 third-description !leading-[10px]">Services</p>
               <ul className="flex flex-col gap-[15px]">
-                <Link href="/debt-syndication" className="third-description text-[#9e9e9e] hover:text-black transition-colors">Debt Syndication</Link>
-                <Link href="/co-lending" className="third-description text-[#9e9e9e] hover:text-black transition-colors">Co-Lending & BC Partnerships</Link>
-                <Link href="/capital-advisory" className="third-description text-[#9e9e9e] hover:text-black transition-colors">Capital Advisory</Link>
-                <Link href="/fintech-collaboration" className="third-description text-[#9e9e9e] hover:text-black transition-colors">Fintech Collaboration & Distribution</Link>
+                <Link href="/finvastra-advisors" className="third-description text-[#9e9e9e] hover:text-black transition-colors">Advisors</Link>
+                <Link href="/finvastra-wealth" className="third-description text-[#9e9e9e] hover:text-black transition-colors">Wealth Management</Link>
+                <Link href="/finvastra-insurance-marketing" className="third-description text-[#9e9e9e] hover:text-black transition-colors">Insurance</Link>
+          
               </ul>
             </motion.div>
 
