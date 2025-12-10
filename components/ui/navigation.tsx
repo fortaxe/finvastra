@@ -3,7 +3,7 @@
 import { motion } from "motion/react";
 import Link from "next/link";
 import Image from "next/image";
-import { useState, useRef } from "react";
+import { useState } from "react";
 
 
 import { useRouter, usePathname } from "next/navigation";
@@ -12,25 +12,9 @@ import { useRouter, usePathname } from "next/navigation";
 
 const Navigation = () => {
   const [isMobileOpen, setIsMobileOpen] = useState<boolean>(false);
-  const [isServicesOpen, setIsServicesOpen] = useState<boolean>(false);
-  const [isCompanyHovered, setIsCompanyHovered] = useState<boolean>(false);
-  const closeTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   const router = useRouter();
   const pathname = usePathname();
-
-  const handleMouseEnter = (): void => {
-    if (closeTimeoutRef.current) {
-      clearTimeout(closeTimeoutRef.current);
-    }
-    setIsServicesOpen(true);
-  };
-
-  const handleMouseLeave = (): void => {
-    closeTimeoutRef.current = setTimeout(() => {
-      setIsServicesOpen(false);
-    }, 100);
-  };
 
   return (
     <div className="w-full max-w-[1440px] px-4  md:px-[70px] mx-auto">
@@ -101,46 +85,6 @@ const Navigation = () => {
               }}
               transition={{ duration: 0.2 }}
             >
-              {/* Dropdown Content - Above nav items */}
-              <motion.div
-                initial={{ opacity: 0, height: 0 }}
-                animate={{ 
-                  opacity: isServicesOpen ? 1 : 0,
-                  height: isServicesOpen ? "auto" : 0
-                }}
-                transition={{ duration: 0.3 }}
-                className={`w-full  overflow-hidden ${isServicesOpen ? 'pointer-events-auto' : 'pointer-events-none'}`}
-                onMouseEnter={handleMouseEnter}
-                onMouseLeave={handleMouseLeave}
-              >
-                <div className="bg-white px-[15px] pt-[15px] pb-[30px] gap-[12.5px] flex flex-col">
-                  <Link 
-                    href="/finvastra-advisors" 
-                    className={`block text-[14px] leading-[10px] transition-colors font-medium ${
-                      pathname === "/finvastra-advisors" ? "text-black" : "text-[#C1C1C1] hover:text-black"
-                    }`}
-                  >
-                    Finvastra Advisors
-                  </Link>
-                  <Link 
-                    href="/finvastra-wealth" 
-                    className={`block text-[14px] leading-[10px] transition-colors ${
-                      pathname === "/finvastra-wealth" ? "text-black" : "text-[#C1C1C1] hover:text-black"
-                    }`}
-                  >
-                    Finvastra Wealth
-                  </Link>
-                  <Link 
-                    href="/finvastra-insurance-marketing" 
-                    className={`block text-[14px] leading-[10px] transition-colors ${
-                      pathname === "/finvastra-insurance-marketing" ? "text-black" : "text-[#C1C1C1] hover:text-black"
-                    }`}
-                  >
-                    Finvastra Insurance Marketing
-                  </Link>
-                </div>
-              </motion.div>
-
               {/* Desktop Navigation - White pill with items */}
               <div className="flex items-center gap-[3px] relative z-10">
                 {/* Home Icon Button */}
@@ -155,89 +99,53 @@ const Navigation = () => {
                   </svg>
                 </motion.button>
 
-                {/* Verticals Link */}
-                <motion.div 
-                  className={`text-black transition-colors duration-200 text-[14px] leading-[10px] flex items-center gap-1  h-[42px] rounded-full cursor-pointer  px-[18px] `}
-                  onMouseEnter={handleMouseEnter}
-                  onMouseLeave={handleMouseLeave}
-                  animate={{ 
-                    backgroundColor: isServicesOpen || (pathname === "/finvastra-advisors" || pathname === "/finvastra-wealth" || pathname === "/finvastra-insurance-marketing") ? "#F0F0F0" : "transparent"
-                  }}
-                  whileHover={{ backgroundColor: "#F0F0F0" }}
-                  transition={{ duration: 0.2 }}
+                {/* Finvastra Advisors */}
+                <Link 
+                  href="/finvastra-advisors" 
+                  className={`text-black transition-colors duration-200 text-[14px] leading-[10px] flex items-center  h-[42px] rounded-full hover:bg-[#F0F0F0] px-[18px] ${
+                    pathname === "/finvastra-advisors" ? "bg-[#F0F0F0]" : ""
+                  }`}
                 >
-                  Verticals
-                  <motion.svg 
-                    width="16" 
-                    height="16" 
-                    viewBox="0 0 16 16" 
-                    fill="#000000" 
-                    xmlns="http://www.w3.org/2000/svg"
-                    animate={{ 
-                      rotate: isServicesOpen ? 180 : 0
-                    }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    <path fillRule="evenodd" clipRule="evenodd" d="M8 8.93934L4.53033 5.46967L3.46967 6.53033L6.58578 9.64645C7.36683 10.4275 8.63316 10.4275 9.41421 9.64645L12.5303 6.53033L11.4697 5.46967L8 8.93934Z" data-mode="fill"></path>
-                  </motion.svg>
-                </motion.div>
+                   Advisory
+                </Link>
 
-                {/* Company Link with External Icon */}
+                {/* Finvastra Wealth */}
+                <Link 
+                  href="/finvastra-wealth" 
+                  className={`text-black transition-colors duration-200 text-[14px] leading-[10px] flex items-center  h-[42px] rounded-full hover:bg-[#F0F0F0] px-[18px] ${
+                    pathname === "/finvastra-wealth" ? "bg-[#F0F0F0]" : ""
+                  }`}
+                >
+                   Wealth Management
+                </Link>
+
+                {/* Finvastra Insurance Marketing */}
+                <Link 
+                  href="/finvastra-insurance-marketing" 
+                  className={`text-black transition-colors duration-200 text-[14px] leading-[10px] flex items-center  h-[42px] rounded-full hover:bg-[#F0F0F0] px-[18px] ${
+                    pathname === "/finvastra-insurance-marketing" ? "bg-[#F0F0F0]" : ""
+                  }`}
+                >
+                   Insurance 
+                </Link>
+
                 <Link 
                   href="/company" 
-                  className={`text-black transition-colors duration-200 text-[14px] leading-[10px] flex items-center gap-1  h-[42px] rounded-full hover:bg-[#F0F0F0] px-[18px] ${
-                    pathname === "/company" ? "bg-[#F0F0F0]" : ""
+                  className={`text-black transition-colors duration-200 text-[14px] leading-[10px] flex items-center  h-[42px] rounded-full hover:bg-[#F0F0F0] px-[18px] ${
+                    pathname === "/finvastra-insurance-marketing" ? "bg-[#F0F0F0]" : ""
                   }`}
-                  onMouseEnter={() => setIsCompanyHovered(true)}
-                  onMouseLeave={() => setIsCompanyHovered(false)}
                 >
-                  Company
-                  <motion.svg 
-                    width="16" 
-                    height="16" 
-                    viewBox="0 0 16 16" 
-                    fill="#000000" 
-                    xmlns="http://www.w3.org/2000/svg"
-                    initial={{ x: 0, y: 0 }}
-                    animate={{ 
-                      x: isCompanyHovered ? 2 : 0,
-                      y: isCompanyHovered ? -2 : 0
-                    }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    <path fillRule="evenodd" clipRule="evenodd" d="M10.166 9.88297V10.55H11.5V9.88297V5.16701C11.5 4.79862 11.2014 4.49999 10.833 4.49999H6.11703H5.45002V5.83402H6.11703H9.22266L4.97165 10.085L4.5 10.5567L5.4433 11.5L5.91496 11.0283L10.166 6.77731V9.88297Z" data-mode="fill"></path>
-                  </motion.svg>
+                   About us 
                 </Link>
 
-                {/* Partner With Us Link */}
-                <Link 
-                  href="/partner" 
-                  className={`text-black transition-colors duration-200 text-[14px] leading-[10px] flex items-center  h-[42px] rounded-full hover:bg-[#F0F0F0] px-[18px] ${
-                    pathname === "/partner" ? "bg-[#F0F0F0]" : ""
-                  }`}
-                >
-                  Partner With Us
-                </Link>
 
-                {/* Careers Link */}
-                <Link 
-                  href="/careers" 
-                  className={`text-black transition-colors duration-200 text-[14px] leading-[10px] flex items-center  h-[42px] rounded-full hover:bg-[#F0F0F0] px-[18px] ${
-                    pathname === "/careers" ? "bg-[#F0F0F0]" : ""
-                  }`}
-                >
-                  Career
-                </Link>
-
-                {/* Support Link */}
-                <Link 
-                  href="/support" 
-                  className={`text-black transition-colors duration-200 text-[14px] leading-[10px] flex items-center  h-[42px] rounded-full hover:bg-[#F0F0F0] px-[18px] ${
-                    pathname === "/support" ? "bg-[#F0F0F0]" : ""
-                  }`}
-                >
-                  Support
-                </Link>
+                {/* Additional links commented out as requested */}
+                {/*
+                <Link href="/company" className="...">Company</Link>
+                <Link href="/partner" className="...">Partner With Us</Link>
+                <Link href="/careers" className="...">Career</Link>
+                <Link href="/support" className="...">Support</Link>
+                */}
 
               </div>
             </motion.div>
@@ -317,69 +225,32 @@ const Navigation = () => {
                       Home
                     </Link>
                   </li>
-
                   <li className="border-b border-white/20 -mx-4">
-                    <div className="px-4 py-[15px]">
-                      <button
-                        onClick={() => setIsServicesOpen(!isServicesOpen)}
-                        className="flex items-center justify-between w-full font-medium text-white text-[28px] leading-none tracking-0 transition-colors hover:opacity-80"
-                      >
-                        Verticals
-                        <motion.svg 
-                          width="16" 
-                          height="16" 
-                          viewBox="0 0 16 16" 
-                          fill="white" 
-                          xmlns="http://www.w3.org/2000/svg"
-                          animate={{ 
-                            rotate: isServicesOpen ? 180 : 0
-                          }}
-                          transition={{ duration: 0.2 }}
-                        >
-                          <path fillRule="evenodd" clipRule="evenodd" d="M8 8.93934L4.53033 5.46967L3.46967 6.53033L6.58578 9.64645C7.36683 10.4275 8.63316 10.4275 9.41421 9.64645L12.5303 6.53033L11.4697 5.46967L8 8.93934Z" data-mode="fill"></path>
-                        </motion.svg>
-                      </button>
-                      {isServicesOpen && (
-                        <motion.div
-                          initial={{ opacity: 0, height: 0 }}
-                          animate={{ opacity: 1, height: "auto" }}
-                          exit={{ opacity: 0, height: 0 }}
-                          transition={{ duration: 0.3 }}
-                          className="mt-4 space-y-3"
-                        >
-                          <Link
-                            href="/finvastra-advisors"
-                            className="block text-white text-[20px] leading-none tracking-0 transition-colors hover:opacity-80 pl-4"
-                            onClick={() => {
-                              setIsMobileOpen(false);
-                              setIsServicesOpen(false);
-                            }}
-                          >
-                            Finvastra Advisors
-                          </Link>
-                          <Link
-                            href="/finvastra-wealth"
-                            className="block text-white text-[20px] leading-none tracking-0 transition-colors hover:opacity-80 pl-4"
-                            onClick={() => {
-                              setIsMobileOpen(false);
-                              setIsServicesOpen(false);
-                            }}
-                          >
-                            Finvastra Wealth
-                          </Link>
-                          <Link
-                            href="/finvastra-insurance-marketing"
-                            className="block text-white text-[20px] leading-none tracking-0 transition-colors hover:opacity-80 pl-4"
-                            onClick={() => {
-                              setIsMobileOpen(false);
-                              setIsServicesOpen(false);
-                            }}
-                          >
-                            Finvastra Insurance Marketing
-                          </Link>
-                        </motion.div>
-                      )}
-                    </div>
+                    <Link
+                      href="/finvastra-advisors"
+                      className="block font-medium px-4 py-[15px] text-white text-[28px] leading-none tracking-0 transition-colors hover:opacity-80"
+                      onClick={() => setIsMobileOpen(false)}
+                    >
+                      Advisory
+                    </Link>
+                  </li>
+                  <li className="border-b border-white/20 -mx-4">
+                    <Link
+                      href="/finvastra-wealth"
+                      className="block font-medium px-4 py-[15px] text-white text-[28px] leading-none tracking-0 transition-colors hover:opacity-80"
+                      onClick={() => setIsMobileOpen(false)}
+                    >
+                       Wealth Management
+                    </Link>
+                  </li>
+                  <li className="border-b border-white/20 -mx-4">
+                    <Link
+                      href="/finvastra-insurance-marketing"
+                      className="block font-medium px-4 py-[15px] text-white text-[28px] leading-none tracking-0 transition-colors hover:opacity-80"
+                      onClick={() => setIsMobileOpen(false)}
+                    >
+                       Insurance 
+                    </Link>
                   </li>
 
                   <li className="border-b border-white/20 -mx-4">
@@ -388,80 +259,20 @@ const Navigation = () => {
                       className="block font-medium px-4 py-[15px] text-white text-[28px] leading-none tracking-0 transition-colors hover:opacity-80"
                       onClick={() => setIsMobileOpen(false)}
                     >
-                      Company
+                       About us 
                     </Link>
                   </li>
-
-                  <li className="border-b border-white/20 -mx-4">
-                    <Link
-                      href="/partner"
-                      className="block font-medium px-4 py-[15px] text-white text-[28px] leading-none tracking-0 transition-colors hover:opacity-80"
-                      onClick={() => setIsMobileOpen(false)}
-                    >
-                      Partner With Us
-                    </Link>
-                  </li>
-
-                  <li className="border-b border-white/20 -mx-4">
-                    <Link
-                      href="/careers"
-                      className="block font-medium px-4 py-[15px] text-white text-[28px] leading-none tracking-0 transition-colors hover:opacity-80"
-                      onClick={() => setIsMobileOpen(false)}
-                    >
-                      Career
-                    </Link>
-                  </li>
-
-                  <li className="border-b border-white/20 -mx-4">
-                    <Link
-                      href="/support"
-                      className="block font-medium px-4 py-[15px] text-white text-[28px] leading-none tracking-0 transition-colors hover:opacity-80"
-                      onClick={() => setIsMobileOpen(false)}
-                    >
-                      Support
-                    </Link>
-                  </li>
+                  {/* Additional links commented out as requested */}
+                  {/*
+                  <li className="border-b border-white/20 -mx-4">...Company...</li>
+                  <li className="border-b border-white/20 -mx-4">...Partner...</li>
+                  <li className="border-b border-white/20 -mx-4">...Career...</li>
+                  <li className="border-b border-white/20 -mx-4">...Support...</li>
+                  */}
                 </ul>
               </div>
 
-              {/* Footer pushed to bottom */}
-              {/* <div className="pt-[25px] space-y-[10px]">
-                <div className="rounded-[10px]">
-                  <p className="text-gray-400 text-[12px] mb-1 font-medium flex items-center leading-none tracking-0">
-                    <span className="w-[6px] h-[6px] bg-blue-400 rounded-full mr-2"></span>
-                    Address
-                  </p>
-                  <p className="text-white text-[14px] leading-none tracking-0 pt-[10px]">
-                    123 Business Street, City, State 12345
-                  </p>
-                </div>
-
-                <div className="rounded-[10px]">
-                  <p className="text-gray-400 text-[12px] mb-1 font-medium flex items-center leading-none tracking-0">
-                    <span className="w-[6px] h-[6px] bg-blue-400 rounded-full mr-2"></span>
-                    Contact
-                  </p>
-                  <a
-                    href="tel:+1234567890"
-                    className="hover:underline text-white text-[14px] leading-none tracking-0 mt-[10px]"
-                  >
-                    +1 (234) 567-8900
-                  </a>
-                </div>
-
-                <div className="rounded-[10px]">
-                  <p className="text-gray-400 text-[12px] mb-1 font-medium flex items-center leading-none tracking-0">
-                    <span className="w-[6px] h-[6px] bg-blue-400 rounded-full mr-2"></span>
-                    Email
-                  </p>
-                  <a
-                    href="mailto:info@equitasitinc.com"
-                    className="hover:underline text-white text-[14px] leading-none tracking-0 mt-[10px]"
-                  >
-                    info@equitasitinc.com
-                  </a>
-                </div>
-              </div> */}
+       
             </div>
           </motion.div>
         </div>

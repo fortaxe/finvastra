@@ -143,7 +143,7 @@ const EmpoweringGrowth = () => {
                         transition={{ duration: 0.6, delay: 0.1, ease: [0.25, 0.1, 0.25, 1] }}
                         className="flex flex-row gap-[5px] items-center mb-2"
                     >
-                        <p className="third-description text-[#9E9E9E] ">
+                        <p className="third-description text-[#6E6E6E] ">
                             Empower growth through funding.
                         </p>
                     </motion.div>

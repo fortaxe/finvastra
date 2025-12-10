@@ -51,7 +51,7 @@ const PartnerContent = () => {
                             <div className="md:space-y-[30px] space-y-[15px]">
                                 {/* Phone */}
                                 <div>
-                                    <p className="text-[16px] leading-[12px] text-[#9E9E9E] mb-[15px]">
+                                    <p className="text-[16px] leading-[12px] text-[#6E6E6E] mb-[15px]">
                                         Phone
                                     </p>
                                     <a href="tel:9885433303" className="text-[16px] leading-[12px] text-black hover:opacity-70 transition-opacity">
@@ -61,7 +61,7 @@ const PartnerContent = () => {
 
                                 {/* Email */}
                                 <div>
-                                    <p className="text-[16px] leading-[12px] text-[#9E9E9E] mb-[15px]">
+                                    <p className="text-[16px] leading-[12px] text-[#6E6E6E] mb-[15px]">
                                         Email
                                     </p>
                                     <a href="mailto:ajay@finvastra.com" className="text-[16px] leading-[12px] text-black hover:opacity-70 transition-opacity">
@@ -71,7 +71,7 @@ const PartnerContent = () => {
 
                                 {/* Address */}
                                 <div>
-                                    <p className="text-[16px] leading-[12px] text-[#9E9E9E] mb-[15px]">
+                                    <p className="text-[16px] leading-[12px] text-[#6E6E6E] mb-[15px]">
                                         Address
                                     </p>
                                     <p className="text-[16px] leading-[12px] text-black ">

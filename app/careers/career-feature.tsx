@@ -48,7 +48,7 @@ const CareerFeature = ({ features }: FeaturesSectionProps) => {
             </h1>
 
             {/* Description */}
-            <p className="secondary-description text-[#9E9E9E] md:mt-[10px] mt-[5px]">
+            <p className="secondary-description text-[#6E6E6E] md:mt-[10px] mt-[5px]">
               {feature.description}
             </p>
           </motion.div>

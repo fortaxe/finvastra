@@ -97,7 +97,7 @@ const FeatureSection = () => {
                 <span className="text-[#DBB25A]">{feature.highlight}</span>
               </h3>
               {/* Feature Text */}
-              <p className="text-[16px] leading-[22px] text-center text-[#9E9E9E] mt-[10px]">
+              <p className="text-[16px] leading-[22px] text-center text-[#6E6E6E] mt-[10px]">
                 {feature.text}
               </p>
             </motion.div>

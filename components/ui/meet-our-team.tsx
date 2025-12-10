@@ -57,7 +57,7 @@ const MeetOurTeam = ({ teamMembers }: MeetOurTeamProps) => {
                   {member.name}
                 </h3>
 
-                <p className="text-[16px] leading-[12px]  text-[#9E9E9E] mb-[10px]">
+                <p className="text-[16px] leading-[12px]  text-[#6E6E6E] mb-[10px]">
                   {member.role}
                 </p>
               </div>

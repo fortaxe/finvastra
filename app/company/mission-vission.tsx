@@ -19,7 +19,7 @@ const MissionVission = () => {
 
             {/* Title */}
             <div >
-              <p className="third-description text-[#9E9E9E] ">
+              <p className="third-description text-[#6E6E6E] ">
               Our Vision
               </p>
 
@@ -32,7 +32,7 @@ const MissionVission = () => {
             </div>
 
             {/* Description */}
-            <p className="text-description-secondary mt-[10px] text-[#9E9E9E]">
+            <p className="text-description-secondary mt-[10px] text-[#6E6E6E]">
             To empower financial institutions with the right funding strategies, partnerships, and insights that help them scale sustainably and compliantly.
             </p>
 
@@ -73,7 +73,7 @@ const MissionVission = () => {
 
             {/* Title */}
             <div >
-              <p className="third-description text-[#9E9E9E] ">
+              <p className="third-description text-[#6E6E6E] ">
               Our Mission
               </p>
 
@@ -86,7 +86,7 @@ const MissionVission = () => {
             </div>
 
             {/* Description */}
-            <p className="text-description-secondary mt-[10px] text-[#9E9E9E]">
+            <p className="text-description-secondary mt-[10px] text-[#6E6E6E]">
             To build a connected financial ecosystem — where NBFCs, fintechs, and capital providers collaborate seamlessly to create value and legacy.
             </p>
 

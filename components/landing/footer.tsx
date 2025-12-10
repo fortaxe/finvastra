@@ -33,7 +33,7 @@ export default function Footer() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.1, ease: [0.25, 0.1, 0.25, 1] }}
-              className="third-description !leading-[18px] md:!leading-[20px] text-[#9E9E9E] mb-5"
+              className="third-description !leading-[18px] md:!leading-[20px] text-[#6E6E6E] mb-5"
             >
               Finvastra partners with NBFCs, fintechs, and institutions to structure debt, unlock capital, and build sustainable financial ecosystems. Together, we transform growth into legacy.
             </motion.p>
@@ -106,8 +106,12 @@ export default function Footer() {
             >
               <p className="text-black mb-5 third-description !leading-[10px]">Company</p>
               <ul className="flex flex-col gap-[15px]">
-                <Link href="/about" className="third-description text-[#9e9e9e] hover:text-black transition-colors">About</Link>
-                <Link href="/contact-us" className="third-description text-[#9e9e9e] hover:text-black transition-colors">Contact Us</Link>
+                <Link href="/company" className="third-description text-[#9e9e9e] hover:text-black transition-colors">About us</Link>
+                <Link href="/support" className="third-description text-[#9e9e9e] hover:text-black transition-colors">Contact Us</Link>
+                <Link href="/partner" className="third-description text-[#9e9e9e] hover:text-black transition-colors">Partner With Us</Link>
+                <Link href="/careers" className="third-description text-[#9e9e9e] hover:text-black transition-colors">Career</Link>
+       
+             
                 <Link href="/security" className="third-description text-[#9e9e9e] hover:text-black transition-colors lg:hidden">Security</Link>
                 <Link href="/terms-of-service" className="third-description text-[#9e9e9e] hover:text-black transition-colors lg:hidden">Terms Of Service</Link>
                 <Link href="/privacy-policy" className="third-description text-[#9e9e9e] hover:text-black transition-colors lg:hidden">Privacy Policy</Link>

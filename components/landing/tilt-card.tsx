@@ -65,7 +65,7 @@ const TiltCard = () => {
                       <h2 className="md:text-[20px] text-[16px] leading-[12px] md:leading-[15px] tracking-[0em] navy-blue md:mb-[15px] mb-[10px] font-medium">
                         {feature.title}
                       </h2>
-                      <p className="text-[14px] leading-[10px]  text-[#9E9E9E] tracking-[0em]">
+                      <p className="text-[14px] leading-[10px]  text-[#6E6E6E] tracking-[0em]">
                         {feature.description}
                       </p>
                       </div>

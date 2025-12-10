@@ -1,7 +1,8 @@
 "use client";
 
-import Image from "next/image";
 import { motion } from "motion/react";
+import { Marquee } from "../ui/marquee";
+import Silk from "../Silk";
 
 const Testimonials = () => {
     const testimonials = [
@@ -47,54 +48,51 @@ const Testimonials = () => {
         },
     ];
 
+    // Split testimonials into two groups for two rows
+    const firstRow = testimonials.slice(0, Math.ceil(testimonials.length / 2));
+    const secondRow = testimonials.slice(Math.ceil(testimonials.length / 2));
+
     return (
-        <div className="w-full relative h-[850px] overflow-hidden">
-            {/* Background Image with Blur */}
-            <div className="absolute inset-0 z-0 ">
-                <Image
-                    src="/hero.png" // Placeholder - user will add actual image
-                    alt="Background"
-                    fill
-                    className="object-cover"
+        <div className="w-full relative min-h-[400px] md:min-h-[600px] overflow-hidden">
+            {/* Background Silk */}
+            <div className="absolute inset-0 z-0">
+                <Silk
+                    speed={5}
+                    scale={1}
+                    color="#092F52"
+                    noiseIntensity={1.5}
+                    rotation={0}
                 />
-     
             </div>
 
             {/* Content */}
-            <div className="relative z-10 w-full max-w-[1440px] mx-auto px-4 md:px-[60px] md:pt-[58px] pt-[30px] ">
-                <div className="flex flex-col lg:flex-row gap-[30px] lg:gap-[80px] md:items-start items-center">
-                    {/* Left Section - Title */}
-                    <div className="flex-1 lg:max-w-[400px]">
-                        <motion.h2
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.6 }}
-                            className="sub-heading-style text-white font-medium text-center md:text-left"
-                        >
-                            <span className="block">Hear it from</span>
-                            <span className="block ">Our Clients</span>
-                        </motion.h2>
-                    </div>
-
-                    {/* Right Section - Testimonial Cards */}
-                    <div 
-                        className="testimonials-scroll flex-1 lg:max-w-[426px] max-h-[887px] overflow-y-auto pr-2 pb-50 md:pb-30 md:space-y-5 space-y-[10px]" 
-                        style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+            <div className="relative z-10 w-full max-w-[1440px] mx-auto px-4 md:px-[60px] md:pt-[58px] pt-[30px] pb-[58px]">
+                {/* Title Section */}
+                <div className="mb-[40px] md:mb-[60px]">
+                    <motion.h2
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6 }}
+                        className="sub-heading-style text-white font-medium text-center md:text-left"
                     >
-                        <style jsx>{`
-                            .testimonials-scroll::-webkit-scrollbar {
-                                display: none;
-                            }
-                        `}</style>
-                        {testimonials.map((testimonial, index) => (
-                            <motion.div
-                                key={index}
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: false, margin: "-50px" }}
-                                transition={{ duration: 0.6, delay: 0.1 }}
-                                className="bg-white/10 rounded-[20px] md:rounded-[25px] pt-[20px] md:pt-[25px] pb-[20px] px-[10px] md:px-[20px] border border-white/20 "
+                        <span className="block">Hear it from</span>
+                        <span className="block ">Our Clients</span>
+                    </motion.h2>
+                </div>
+
+                {/* First Row - Scrolls Right (normal direction) */}
+                <div className="mb-[20px] md:mb-[30px]">
+                    <Marquee 
+                        reverse={false} 
+                        pauseOnHover={true}
+                        className="[--duration:50s] [--gap:1.5rem]"
+                        repeat={3}
+                    >
+                        {firstRow.map((testimonial, index) => (
+                            <div
+                                key={`row1-${index}`}
+                                className="bg-white/10 rounded-[20px] md:rounded-[25px] pt-[20px] md:pt-[25px] pb-[20px] px-[20px] md:px-[30px] border border-white/20 shrink-0 w-[350px] md:w-[426px]"
                             >
                                 <h3 className="text-[16px] leading-[12px] text-white mb-2">
                                     {testimonial.name}
@@ -103,12 +101,39 @@ const Testimonials = () => {
                                     {testimonial.title}
                                 </p>
                                 <p className="text-[16px] leading-[22px] tracking-[0em] text-white">
-                                        {testimonial.quote}&quot;
+                                    {testimonial.quote}&quot;
                                 </p>
-                            </motion.div>
+                            </div>
                         ))}
-                    </div>
+                    </Marquee>
                 </div>
+
+                {/* Second Row - Scrolls Left (reverse direction) */}
+                {/* <div>
+                    <Marquee 
+                        reverse={true} 
+                        pauseOnHover={true}
+                        className="[--duration:50s] [--gap:1.5rem]"
+                        repeat={3}
+                    >
+                        {secondRow.map((testimonial, index) => (
+                            <div
+                                key={`row2-${index}`}
+                                className="bg-white/10 rounded-[20px] md:rounded-[25px] pt-[20px] md:pt-[25px] pb-[20px] px-[20px] md:px-[30px] border border-white/20 shrink-0 w-[350px] md:w-[426px]"
+                            >
+                                <h3 className="text-[16px] leading-[12px] text-white mb-2">
+                                    {testimonial.name}
+                                </h3>
+                                <p className="third-description text-white mb-[15px]">
+                                    {testimonial.title}
+                                </p>
+                                <p className="text-[16px] leading-[22px] tracking-[0em] text-white">
+                                    {testimonial.quote}&quot;
+                                </p>
+                            </div>
+                        ))}
+                    </Marquee>
+                </div> */}
             </div>
         </div>
     );

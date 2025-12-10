@@ -3,6 +3,7 @@
 
 import { motion } from "motion/react";
 import Navigation from "@/components/ui/navigation";
+import Silk from "@/components/Silk";
 
 interface DivisionHeroProps {
     title: string;
@@ -15,16 +16,16 @@ const DivisionHero = ({ title, description, tags, maxWidth = "899px" }: Division
     return (
 
         <div className="min-h-screen w-full bg-white relative">
-            {/* Hero Background Image */}
-            <div 
-                className="absolute inset-0 z-0"
-                style={{
-                    backgroundImage: 'url(/hero.png)',
-                    backgroundSize: 'cover',
-                    backgroundPosition: 'center',
-                    backgroundRepeat: 'no-repeat'
-                }}
-            />
+            {/* Hero Background Silk */}
+            <div className="absolute inset-0 z-0">
+                <Silk
+                    speed={5}
+                    scale={1}
+                    color="#092F52"
+                    noiseIntensity={1.5}
+                    rotation={0}
+                />
+            </div>
 
 
             <div className="absolute top-0 left-0 right-0 z-50">
