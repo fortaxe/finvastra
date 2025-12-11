@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const WhatsAppButton = () => {
   // Replace with your WhatsApp number (format: country code + number without + or spaces)
-  const phoneNumber = "1234567890"; // Example: "919876543210" for India
+  const phoneNumber = "9247519004"; // Example: "919876543210" for India
   const whatsappUrl = `https://wa.me/${phoneNumber}`;
 
   return (
