@@ -18,8 +18,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Finvastra",
- 
+  title: "Finvastra | Home Loans, Business Loans, Wealth Planning & Corporate Funding",
+  description: "Finvastra offers expert support in Home Loans, Business Loans, Wealth Planning and Corporate Funding. Clear options, fast assistance and trusted financial guidance for every goal.",
   icons: {
     icon: "/favicon.png",
   },
